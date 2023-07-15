@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33238ce789405164dbd6cd2d8669ca9a, type: 3}
+  m_Name: 2 1
+  m_EditorClassIdentifier: 
+  sentences:
+  - text: Hari menjelang sore, waktunya pulang sekolah
+    speaker: {fileID: 11400000, guid: 5f41f85557945064aabeed32ef0f8019, type: 2}
+  - text: Selamat sore anak-anak
+    speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
+  - text: Sore pak
+    speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+  - text: Sore pak
+    speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+  - text: Bapak ada pengumuman penting. Kita akan mengadakan festival budaya untuk
+      memperingati Hari Kemerdekaan Indonesia. Setiap kelompok harus mempresentasikan
+      satu aspek budaya yang berbeda.
+    speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
+  - text: Kita harus memilih budaya yang benar-benar mewakili keanekaragaman Indonesia.
+    speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+  - text: Kamu benar Rani. Setiap kelompok akan memberikan presentasi mereka di depan
+      juri yang terdiri dari para tamu penting. Pemenangnya akan mendapatkan penghargaan
+      khusus.
+    speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
+  - text: (Berpikir dalam hati) Ini kesempatan besar. Aku harus membuat keputusan
+      yang tepat.
+    speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+  background: {fileID: 21300000, guid: c2bbe4307e1904c41bd70e9bc720a54d, type: 3}
+  nextScene: {fileID: 11400000, guid: 6272d9438908692489efc08d206291d5, type: 2}
