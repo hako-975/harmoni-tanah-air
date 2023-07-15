@@ -67,17 +67,37 @@ public class DialogBarController : MonoBehaviour
         return state == State.COMPLETED;
     }
 
+    public bool IsPlaying()
+    {
+        return state == State.PLAYING;
+    }
+
+    public void SetStateCompleted()
+    {
+        state = State.COMPLETED;
+
+        ClearText();
+
+        sentenceIndex -= 1;
+        
+        textBoxText.text = currentScene.sentences[sentenceIndex].text;
+
+        SetNameBox();
+        
+        sentenceIndex += 1;
+    }
+
     public bool IsLastSentence()
     {
         return sentenceIndex == currentScene.sentences.Count;
     }
 
-    public void PlayNextSentence()
+    private void SetNameBox()
     {
         if (currentScene.sentences[sentenceIndex].speaker.speakerName != "Narrator")
         {
             nameBoxTextUI.SetActive(true);
-            
+
             nameBoxText.text = currentScene.sentences[sentenceIndex].speaker.speakerName;
             nameBoxText.color = currentScene.sentences[sentenceIndex].speaker.textColor;
         }
@@ -85,6 +105,11 @@ public class DialogBarController : MonoBehaviour
         {
             nameBoxTextUI.SetActive(false);
         }
+    }
+
+    public void PlayNextSentence()
+    {
+        SetNameBox();
 
         StartCoroutine(TypeText(currentScene.sentences[sentenceIndex++].text));
     }
@@ -92,6 +117,7 @@ public class DialogBarController : MonoBehaviour
     private IEnumerator TypeText(string text)
     {
         textBoxText.text = "";
+
         state = State.PLAYING;
         int wordIndex = 0;
 
@@ -106,6 +132,5 @@ public class DialogBarController : MonoBehaviour
                 break;
             }
         }
-
     }
 }

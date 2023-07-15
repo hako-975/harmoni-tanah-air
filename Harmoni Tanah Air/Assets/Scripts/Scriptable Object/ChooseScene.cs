@@ -9,6 +9,7 @@ public class ChooseScene : GameScene
     [System.Serializable]
     public struct ChooseLabel
     {
+        [TextArea(7, 7)]
         public string text;
         public StoryScene nextScene;
     }

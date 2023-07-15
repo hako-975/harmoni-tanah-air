@@ -12,6 +12,7 @@ public class StoryScene : GameScene
     [System.Serializable]
     public struct Sentence
     {
+        [TextArea(7, 7)]
         public string text;
         public Speaker speaker;
     }

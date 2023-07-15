@@ -38,7 +38,12 @@ public class GameController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
-            if (state == State.IDLE && dialogBar.IsCompleted())
+            if (dialogBar.IsPlaying())
+            {
+                dialogBar.SetStateCompleted();
+                return;
+            }
+            else if (state == State.IDLE && dialogBar.IsCompleted())
             {
                 if (dialogBar.IsLastSentence())
                 {
@@ -48,7 +53,7 @@ public class GameController : MonoBehaviour
                 {
                     dialogBar.PlayNextSentence();
                 }
-            }
+            } 
         }
     }
 

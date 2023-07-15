@@ -968,7 +968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameBoxTextUI: {fileID: 1827680242}
   textBoxText: {fileID: 214953189}
-  currentScene: {fileID: 11400000, guid: 7dfb4cd248067e74588d61638dcb858d, type: 2}
+  currentScene: {fileID: 11400000, guid: 93d9fef67a1ed6748ae768349f13b2dd, type: 2}
 --- !u!95 &1279077262
 Animator:
   serializedVersion: 5
@@ -1105,7 +1105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b181bd294d942a74f8208cf07be6e7d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScene: {fileID: 11400000, guid: 7dfb4cd248067e74588d61638dcb858d, type: 2}
+  currentScene: {fileID: 11400000, guid: 93d9fef67a1ed6748ae768349f13b2dd, type: 2}
   dialogBar: {fileID: 1279077261}
   backgroundController: {fileID: 1237366784}
   chooseController: {fileID: 1523247236}

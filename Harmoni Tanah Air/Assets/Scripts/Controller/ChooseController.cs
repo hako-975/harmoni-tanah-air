@@ -28,7 +28,6 @@ public class ChooseController : MonoBehaviour
             if (labelHeight == -1)
             {
                 labelHeight = newChooseButton.GetHeight();
-                Debug.Log(labelHeight);
             }
             newChooseButton.Setup(scene.labels[i], this, CalculateLabelPosition(i, scene.labels.Count));
         }
