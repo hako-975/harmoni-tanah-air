@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -22,38 +23,40 @@ public class GameController : MonoBehaviour
         IDLE, ANIMATE, CHOOSE
     }
 
+    private Button dialogBarButton;
+
     // Start is called before the first frame update
     void Start()
     {
+        dialogBarButton = dialogBar.GetComponent<Button>();
+
         if (currentScene is StoryScene)
         {
             StoryScene storyScene = currentScene as StoryScene;
             dialogBar.PlayScene(storyScene);
             backgroundController.SetImage(storyScene.background);
         }
-    }
 
-    // Update is called once per frame
-    void Update()
+        dialogBarButton.onClick.AddListener(OnDialogBarButtonClick);
+    }
+    
+    private void OnDialogBarButtonClick()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        if (dialogBar.IsPlaying())
         {
-            if (dialogBar.IsPlaying())
+            dialogBar.SetStateCompleted();
+            return;
+        }
+        else if (state == State.IDLE && dialogBar.IsCompleted())
+        {
+            if (dialogBar.IsLastSentence())
             {
-                dialogBar.SetStateCompleted();
-                return;
+                PlayScene((currentScene as StoryScene).nextScene);
             }
-            else if (state == State.IDLE && dialogBar.IsCompleted())
+            else
             {
-                if (dialogBar.IsLastSentence())
-                {
-                    PlayScene((currentScene as StoryScene).nextScene);
-                }
-                else
-                {
-                    dialogBar.PlayNextSentence();
-                }
-            } 
+                dialogBar.PlayNextSentence();
+            }
         }
     }
 
