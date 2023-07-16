@@ -1,7 +1,10 @@
+using TMPro;
 using UnityEngine;
 
 public class ChooseController : MonoBehaviour
 {
+    [SerializeField]
+    private TextMeshProUGUI questionText;
     [SerializeField]
     private ChooseButtonController chooseButtonPrefabs;
     [SerializeField]
@@ -21,6 +24,7 @@ public class ChooseController : MonoBehaviour
     {
         DestroyLabels();
         animator.SetTrigger("Show");
+        questionText.text = scene.question;
         for (int i = 0; i < scene.labels.Count; i++)
         {
             ChooseButtonController newChooseButton = Instantiate(chooseButtonPrefabs.gameObject, transform).GetComponent<ChooseButtonController>();
@@ -73,7 +77,10 @@ public class ChooseController : MonoBehaviour
     {
         foreach (Transform childTransform in transform)
         {
-            Destroy(childTransform.gameObject);
+            if (childTransform != questionText.transform)
+            {
+                Destroy(childTransform.gameObject);
+            }
         }
     }
 }

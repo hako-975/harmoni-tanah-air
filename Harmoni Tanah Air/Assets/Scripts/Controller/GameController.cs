@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
     private DialogBarController dialogBar;
 
     [SerializeField]
-    private BackgroundController backgroundController;
+    private SpriteSwitcherController spriteSwitcherController;
 
     [SerializeField]
     private ChooseController chooseController;
@@ -34,7 +34,7 @@ public class GameController : MonoBehaviour
         {
             StoryScene storyScene = currentScene as StoryScene;
             dialogBar.PlayScene(storyScene);
-            backgroundController.SetImage(storyScene.background);
+            spriteSwitcherController.SetImage(storyScene.background);
         }
 
         dialogBarButton.onClick.AddListener(OnDialogBarButtonClick);
@@ -74,11 +74,11 @@ public class GameController : MonoBehaviour
         if (scene is StoryScene)
         {
             StoryScene storyScene = scene as StoryScene;
-            backgroundController.SwitchImage(storyScene.background);
+            spriteSwitcherController.SwitchImage(storyScene.background);
             yield return new WaitForSeconds(1f);
             dialogBar.ClearText();
-            dialogBar.Show();
             yield return new WaitForSeconds(1f);
+            dialogBar.Show();
             dialogBar.PlayScene(storyScene);
             state = State.IDLE;
         }

@@ -1,27 +1,32 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BackgroundController : MonoBehaviour
+public class SpriteSwitcherController : MonoBehaviour
 {
-    [SerializeField]
     private bool isSwitched = false;
+
     [SerializeField]
-    private Image background1;
+    private Image image1;
     [SerializeField]
-    private Image background2;
-    [SerializeField]
+    private Image image2;
+    
     private Animator animator;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     public void SwitchImage(Sprite sprite)
     {
         if (!isSwitched)
         {
-            background2.sprite = sprite;
+            image2.sprite = sprite;
             animator.SetTrigger("Switch1to2");
         }
         else
         {
-            background1.sprite = sprite;
+            image1.sprite = sprite;
             animator.SetTrigger("Switch2to1");
         }
 
@@ -32,11 +37,24 @@ public class BackgroundController : MonoBehaviour
     {
         if (!isSwitched)
         {
-            background1.sprite = sprite;
+            image1.sprite = sprite;
         }
         else
         {
-            background2.sprite = sprite;
+            image2.sprite = sprite;
         }
     }
+
+    public Sprite GetImage()
+    {
+        if (!isSwitched)
+        {
+            return image1.sprite;
+        }
+        else
+        {
+            return image2.sprite;
+        }
+    }
+
 }

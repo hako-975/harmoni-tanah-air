@@ -5,11 +5,13 @@ using UnityEngine;
 [System.Serializable]
 public class ChooseScene : GameScene
 {
+    public string question;
     public List<ChooseLabel> labels;
+ 
     [System.Serializable]
     public struct ChooseLabel
     {
-        [TextArea(7, 7)]
+        [TextArea(1, 1)]
         public string text;
         public StoryScene nextScene;
     }

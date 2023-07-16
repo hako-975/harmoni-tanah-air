@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87b3292eb97271c46a2e32ab482508bd, type: 3}
   m_Name: 1
   m_EditorClassIdentifier: 
+  question: Penampilan apa yang akan kamu tampilkan saat festival budaya?
   labels:
   - text: Menampilkan Tarian Budaya
     nextScene: {fileID: 11400000, guid: 6c4956bef27369a45956225340480165, type: 2}
