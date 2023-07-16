@@ -16,6 +16,9 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private ChooseController chooseController;
 
+    [SerializeField]
+    private AudioController audioController;
+
     private State state = State.IDLE;
 
     private enum State
@@ -35,6 +38,7 @@ public class GameController : MonoBehaviour
             StoryScene storyScene = currentScene as StoryScene;
             dialogBar.PlayScene(storyScene);
             spriteSwitcherController.SetImage(storyScene.background);
+            PlayAudio(storyScene.sentences[0]);
         }
 
         dialogBarButton.onClick.AddListener(OnDialogBarButtonClick);
@@ -56,6 +60,7 @@ public class GameController : MonoBehaviour
             else
             {
                 dialogBar.PlayNextSentence();
+                PlayAudio((currentScene as StoryScene).sentences[dialogBar.GetSentenceIndex()]);
             }
         }
     }
@@ -75,6 +80,7 @@ public class GameController : MonoBehaviour
         {
             StoryScene storyScene = scene as StoryScene;
             spriteSwitcherController.SwitchImage(storyScene.background);
+            PlayAudio(storyScene.sentences[0]);
             yield return new WaitForSeconds(1f);
             dialogBar.ClearText();
             yield return new WaitForSeconds(1f);
@@ -87,5 +93,10 @@ public class GameController : MonoBehaviour
             state = State.CHOOSE;
             chooseController.SetupChoose(scene as ChooseScene);
         }
+    }
+
+    private void PlayAudio(StoryScene.Sentence sentence)
+    {
+        audioController.PlayAudio(sentence.music, sentence.sound);
     }
 }

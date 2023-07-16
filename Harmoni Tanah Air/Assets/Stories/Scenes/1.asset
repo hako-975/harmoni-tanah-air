@@ -21,16 +21,27 @@ MonoBehaviour:
       actionType: 1
       coords: {x: 400, y: 0}
       moveSpeed: 0
+    music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
+    sound: {fileID: 0}
   - text: Selamat Pagi Semua
     speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
-      spriteIndex: 0
+      spriteIndex: 1
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: Pagi
+    speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      spriteIndex: 1
       actionType: 3
       coords: {x: 0, y: 0}
       moveSpeed: 0
-  - text: Pagi
-    speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
-    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 8300000, guid: 81fae3d7b961793458e820cf1f2a2fa3, type: 3}
   background: {fileID: 21300000, guid: ee82eaf77c1b32f44a3419e68d2d7984, type: 3}
   nextScene: {fileID: 11400000, guid: 7abd9eb8fa25a024395b1cd10b6a2c2b, type: 2}

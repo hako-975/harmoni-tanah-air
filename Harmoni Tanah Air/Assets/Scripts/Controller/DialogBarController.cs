@@ -16,7 +16,7 @@ public class DialogBarController : MonoBehaviour
 
     private TextMeshProUGUI nameBoxText;
 
-    private int sentenceIndex = 0;
+    private int sentenceIndex = -1;
 
     private State state = State.COMPLETED;
 
@@ -38,6 +38,11 @@ public class DialogBarController : MonoBehaviour
         nameBoxText = nameBoxTextUI.GetComponentInChildren<TextMeshProUGUI>();
 
         animator = GetComponent<Animator>();
+    }
+
+    public int GetSentenceIndex()
+    {
+        return sentenceIndex;
     }
 
     public void Hide()
@@ -63,7 +68,7 @@ public class DialogBarController : MonoBehaviour
     public void PlayScene(StoryScene scene)
     {
         currentScene = scene;
-        sentenceIndex = 0;
+        sentenceIndex = -1;
         PlayNextSentence();
     }
 
@@ -83,18 +88,14 @@ public class DialogBarController : MonoBehaviour
 
         ClearText();
 
-        sentenceIndex -= 1;
-        
         textBoxText.text = currentScene.sentences[sentenceIndex].text;
 
         SetNameBox();
-        
-        sentenceIndex += 1;
     }
 
     public bool IsLastSentence()
     {
-        return sentenceIndex == currentScene.sentences.Count;
+        return sentenceIndex + 1 == currentScene.sentences.Count;
     }
 
     private void SetNameBox()
@@ -114,10 +115,9 @@ public class DialogBarController : MonoBehaviour
 
     public void PlayNextSentence()
     {
+        StartCoroutine(TypeText(currentScene.sentences[++sentenceIndex].text));
         SetNameBox();
         ActSpeakers();
-        StartCoroutine(TypeText(currentScene.sentences[sentenceIndex++].text));
-
     }
 
     private IEnumerator TypeText(string text)
@@ -152,6 +152,7 @@ public class DialogBarController : MonoBehaviour
     private void ActSpeaker(StoryScene.Sentence.Action action)
     {
         SpriteController controller = null;
+        
         switch (action.actionType)
         {
             case StoryScene.Sentence.Action.Type.NONE:
@@ -170,7 +171,6 @@ public class DialogBarController : MonoBehaviour
                 {
                     controller = sprites[action.speaker];
                 }
-
                 controller.Setup(action.speaker.sprites[action.spriteIndex]);
                 controller.Show(action.coords);
                 return;
