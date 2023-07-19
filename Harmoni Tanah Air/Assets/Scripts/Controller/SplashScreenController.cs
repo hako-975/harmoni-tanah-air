@@ -21,7 +21,7 @@ public class SplashScreenController : MonoBehaviour
     
     public void TapToStartButton()
     {
-        SceneManager.LoadScene("Gameplay");
+        SceneManager.LoadScene("MainMenu");
     }
 
     private IEnumerator WaitAnim()

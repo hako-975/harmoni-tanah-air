@@ -19,7 +19,7 @@ MonoBehaviour:
     - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
       spriteIndex: 0
       actionType: 1
-      coords: {x: 400, y: 0}
+      coords: {x: 400, y: 140}
       moveSpeed: 0
     music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
     sound: {fileID: 0}
@@ -29,7 +29,7 @@ MonoBehaviour:
     - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
       spriteIndex: 1
       actionType: 0
-      coords: {x: 0, y: 0}
+      coords: {x: 0, y: 140}
       moveSpeed: 0
     music: {fileID: 0}
     sound: {fileID: 0}
@@ -39,7 +39,7 @@ MonoBehaviour:
     - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
       spriteIndex: 1
       actionType: 3
-      coords: {x: 0, y: 0}
+      coords: {x: 0, y: 140}
       moveSpeed: 0
     music: {fileID: 0}
     sound: {fileID: 8300000, guid: 81fae3d7b961793458e820cf1f2a2fa3, type: 3}

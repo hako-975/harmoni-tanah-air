@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Ayu
   m_EditorClassIdentifier: 
   speakerName: Ayu
-  textColor: {r: 1, g: 0.8229661, b: 0.5235849, a: 1}
+  textColor: {r: 1, g: 0.94230855, b: 0, a: 1}
   sprites: []
   prefab: {fileID: 0}

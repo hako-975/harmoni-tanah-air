@@ -24,8 +24,8 @@ MonoBehaviour:
     - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
       spriteIndex: 1
       actionType: 1
-      coords: {x: 0, y: 0}
-      moveSpeed: 1
+      coords: {x: 0, y: 140}
+      moveSpeed: 0
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: Sore pak
@@ -33,9 +33,9 @@ MonoBehaviour:
     actions:
     - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
       spriteIndex: 1
-      actionType: 3
-      coords: {x: 0, y: 0}
-      moveSpeed: 0
+      actionType: 2
+      coords: {x: 500, y: 140}
+      moveSpeed: 2
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: Sore pak
@@ -52,7 +52,12 @@ MonoBehaviour:
     sound: {fileID: 0}
   - text: Kita harus memilih budaya yang benar-benar mewakili keanekaragaman Indonesia.
     speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
-    actions: []
+    actions:
+    - speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 0, y: 140}
+      moveSpeed: 0
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: Kamu benar Rani. Setiap kelompok akan memberikan pertunjukan mereka di
