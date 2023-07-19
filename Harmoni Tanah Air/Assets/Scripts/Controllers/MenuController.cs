@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using TMPro;
@@ -6,7 +7,7 @@ using TMPro;
 public class MenuController : MonoBehaviour
 {
     [SerializeField]
-    private string gameScene;
+    private string loaderScene;
 
     [SerializeField]
     private TextMeshProUGUI textSpeedValue;
@@ -19,9 +20,14 @@ public class MenuController : MonoBehaviour
 
     [SerializeField]
     private AudioMixer musicMixer;
-
     [SerializeField]
     private AudioMixer soundMixer;
+
+    [SerializeField]
+    private Button newGameButton;
+
+    [SerializeField]
+    private Button loadButton;
 
     private Animator animator;
 
@@ -30,6 +36,10 @@ public class MenuController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        loadButton.interactable = SaveController.IsGameSaved();
+        loadButton.onClick.AddListener(LoadGameButton);
+
+        newGameButton.onClick.AddListener(NewGameButton);
     }
 
     void Update()
@@ -43,7 +53,13 @@ public class MenuController : MonoBehaviour
 
     public void NewGameButton()
     {
-        SceneManager.LoadScene(gameScene, LoadSceneMode.Single);
+        SaveController.ClearSavedGame();
+        LoadGameButton();
+    }
+
+    public void LoadGameButton()
+    {
+        SceneManager.LoadScene(loaderScene, LoadSceneMode.Additive);
     }
 
     public void ShowSettings()

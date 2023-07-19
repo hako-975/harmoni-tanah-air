@@ -1281,6 +1281,8 @@ MonoBehaviour:
   spriteSwitcherController: {fileID: 1237366784}
   chooseController: {fileID: 1523247236}
   audioController: {fileID: 2032185422}
+  data: {fileID: 11400000, guid: 18f24c050b98f5840b3855ce85ee0821, type: 2}
+  menuScene: MainMenu
 --- !u!1 &1523247230
 GameObject:
   m_ObjectHideFlags: 0

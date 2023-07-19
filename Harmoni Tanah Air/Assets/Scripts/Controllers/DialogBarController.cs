@@ -45,6 +45,11 @@ public class DialogBarController : MonoBehaviour
         return sentenceIndex;
     }
 
+    public void SetSentenceIndex(int sentenceIndex)
+    {
+        this.sentenceIndex = sentenceIndex;
+    }
+
     public void Hide()
     {
         if (!isHidden)
@@ -65,10 +70,10 @@ public class DialogBarController : MonoBehaviour
         textBoxText.text = "";
     }
 
-    public void PlayScene(StoryScene scene)
+    public void PlayScene(StoryScene scene, int sentenceIndex = -1)
     {
         currentScene = scene;
-        sentenceIndex = -1;
+        this.sentenceIndex = sentenceIndex;
         PlayNextSentence();
     }
 

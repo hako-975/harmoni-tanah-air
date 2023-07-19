@@ -1329,7 +1329,7 @@ GameObject:
   - component: {fileID: 403809652}
   - component: {fileID: 403809654}
   m_Layer: 5
-  m_Name: Start Button
+  m_Name: New Game Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1436,19 +1436,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 403809652}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1704236976}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: NewGameButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &426863198
 GameObject:
   m_ObjectHideFlags: 0
@@ -5286,13 +5274,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c211ac25f370564992bea39c71c6818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameScene: Gameplay
+  loaderScene: LoadingScreen
   textSpeedValue: {fileID: 99939946}
   autoForwardValue: {fileID: 459486700}
   musicValue: {fileID: 767707713}
   soundValue: {fileID: 1660570189}
   musicMixer: {fileID: 24100000, guid: 57e6f8165a39a0a4c886ad4f2b80fce8, type: 2}
   soundMixer: {fileID: 24100000, guid: 3b7c3c65a54366e44a46d0d92b9f97fb, type: 2}
+  newGameButton: {fileID: 403809654}
+  loadButton: {fileID: 1376925549}
 --- !u!95 &1704236977
 Animator:
   serializedVersion: 5
