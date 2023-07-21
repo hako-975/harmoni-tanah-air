@@ -15,7 +15,9 @@ public class PauseController : MonoBehaviour
     private GameObject loadPanel;
     [SerializeField]
     private GameObject settingsPanel;
-    
+    [SerializeField]
+    private GameObject mainMenuPanel;
+
     [Header("Buttons")]
     [SerializeField]
     private Button pauseButton;
@@ -31,10 +33,17 @@ public class PauseController : MonoBehaviour
     private Button settingsButton;
     [SerializeField]
     private Button mainMenuButton;
+    [SerializeField]
+    private Button mainMenuYesButton;
+    [SerializeField]
+    private Button mainMenuNoButton;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        pausePanel.SetActive(false);
+        
         pauseButton.onClick.AddListener(OnPauseButtonClick);
         resumeButton.onClick.AddListener(OnResumeButtonClick);
         historyButton.onClick.AddListener(OnHistoryButtonClick);
@@ -42,6 +51,8 @@ public class PauseController : MonoBehaviour
         loadButton.onClick.AddListener(OnLoadButtonClick);
         settingsButton.onClick.AddListener(OnSettingsButtonClick);
         mainMenuButton.onClick.AddListener(OnMainMenuButtonClick);
+        mainMenuYesButton.onClick.AddListener(OnMainMenuYesButtonClick);
+        mainMenuNoButton.onClick.AddListener(OnMainMenuNoButtonClick);
     }
     
     private void OnPauseButtonClick()
@@ -78,7 +89,19 @@ public class PauseController : MonoBehaviour
     }
     private void OnMainMenuButtonClick()
     {
+        DisabledAllPanel();
+        mainMenuPanel.SetActive(true);
+    }
+
+    private void OnMainMenuYesButtonClick()
+    {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    private void OnMainMenuNoButtonClick()
+    {
+        DisabledAllPanel();
+        historyPanel.SetActive(true);
     }
 
     private void DisabledAllPanel()
@@ -87,5 +110,6 @@ public class PauseController : MonoBehaviour
         savePanel.SetActive(false);
         loadPanel.SetActive(false);
         settingsPanel.SetActive(false);
+        mainMenuPanel.SetActive(false);
     }
 }
