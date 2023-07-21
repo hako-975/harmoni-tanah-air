@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -23,6 +22,13 @@ public class GameController : MonoBehaviour
 
     [SerializeField]
     private DataHolder data;
+
+    [SerializeField]
+    private Button autoplayButton;
+
+    private bool autoplayBool = false;
+    
+    private bool isAutoplayRunning = false;
 
     private List<StoryScene> history = new List<StoryScene>();
 
@@ -72,7 +78,16 @@ public class GameController : MonoBehaviour
             PlayAudio(storyScene.sentences[dialogBar.GetSentenceIndex()]);
         }
 
+        autoplayButton.onClick.AddListener(OnAutoplayButtonClick);
         dialogBarButton.onClick.AddListener(OnDialogBarButtonClick);
+    }
+
+    void Update()
+    {
+        if (autoplayBool && !isAutoplayRunning)
+        {
+            StartCoroutine(Autoplay());
+        }
     }
 
     private void OnSaveButtonClick()
@@ -92,6 +107,18 @@ public class GameController : MonoBehaviour
 
         SaveController.SaveGame(data);
         PlayerPrefsController.instance.SetNextScene("MainMenu");
+    }
+
+    private void OnAutoplayButtonClick()
+    {
+        if (autoplayBool == false)
+        {
+            StartCoroutine(AnimationAutoplayOn());
+        }
+        else
+        {
+            StartCoroutine(AnimationAutoplayOff());
+        }
     }
 
     private void OnDialogBarButtonClick()
@@ -121,6 +148,35 @@ public class GameController : MonoBehaviour
     public void PlayScene(GameScene scene, int sentenceIndex = -1, bool isAnimated = true)
     {
         StartCoroutine(SwitchScene(scene, sentenceIndex, isAnimated));
+    }
+
+    private IEnumerator AnimationAutoplayOn()
+    {
+        dialogBarButton.interactable = false;
+        autoplayBool = true;
+        autoplayButton.GetComponent<Animator>().SetTrigger("On");
+        yield return new WaitForSeconds(0.5f);
+        autoplayButton.GetComponent<Animator>().SetTrigger("Loop");
+    }
+
+    private IEnumerator AnimationAutoplayOff()
+    {
+        dialogBarButton.interactable = true;
+        autoplayBool = false;
+        autoplayButton.GetComponent<Animator>().SetTrigger("Off");
+        yield return new WaitForSeconds(0.5f);
+    }
+
+    private IEnumerator Autoplay()
+    {
+        if (dialogBar.IsCompleted())
+        {
+            isAutoplayRunning = true;
+            float waitTime = PlayerPrefsController.instance.GetAutoForward();
+            yield return new WaitForSeconds(waitTime);
+            OnDialogBarButtonClick();
+            isAutoplayRunning = false;
+        }
     }
 
     private IEnumerator SwitchScene(GameScene scene, int sentenceIndex = -1, bool isAnimated = true)

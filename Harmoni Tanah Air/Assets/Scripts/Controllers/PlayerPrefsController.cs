@@ -38,6 +38,7 @@ public class PlayerPrefsController : MonoBehaviour
         PlayerPrefs.SetString("NextScene", nameScene);
         SceneManager.LoadScene("LoadingScreen");
     }
+
     public int GetTextSpeed()
     {
         return PlayerPrefs.GetInt("TextSpeed", 50);
@@ -50,7 +51,7 @@ public class PlayerPrefsController : MonoBehaviour
 
     public int GetAutoForward()
     {
-        return PlayerPrefs.GetInt("AutoForward", 1);
+        return PlayerPrefs.GetInt("AutoForward", 3);
     }
 
     public void SetAutoForward(int second)
