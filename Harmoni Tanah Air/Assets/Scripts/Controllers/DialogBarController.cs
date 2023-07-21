@@ -169,7 +169,7 @@ public class DialogBarController : MonoBehaviour
         while (state != State.COMPLETED)
         {
             textBoxText.text += text[wordIndex];
-            yield return new WaitForSeconds(speedFactor * PlayerPrefs.GetFloat("TextSpeed", 0.05f));
+            yield return new WaitForSeconds(speedFactor * (PlayerPrefsController.instance.GetTextSpeed() / 1000f));
 
             if (++wordIndex == text.Length)
             {
