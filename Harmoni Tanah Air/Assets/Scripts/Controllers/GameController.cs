@@ -78,48 +78,23 @@ public class GameController : MonoBehaviour
         dialogBarButton.onClick.AddListener(OnDialogBarButtonClick);
     }
 
-    // nanti ganti tombol
-    void Update()
+    private void OnSaveButtonClick()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        Debug.Log("Saved");
+        List<int> historyIndicies = new List<int>();
+        history.ForEach(scene =>
         {
-            Debug.Log("Saved");
-            List<int> historyIndicies = new List<int>();
-            history.ForEach(scene =>
-            {
-                historyIndicies.Add(this.data.scenes.IndexOf(scene));
-            });
+            historyIndicies.Add(this.data.scenes.IndexOf(scene));
+        });
 
-            SaveData data = new SaveData
-            {
-                sentence = dialogBar.GetSentenceIndex(),
-                prevScenes = historyIndicies
-            };
-
-            SaveController.SaveGame(data);
-            SceneManager.LoadScene(menuScene);
-        }
-
-        // go back
-        /*if (Input.GetMouseButtonDown(1))
+        SaveData data = new SaveData
         {
-            if (dialogBar.IsFirstSentence())
-            {
-                if (history.Count > 1)
-                {
-                    dialogBar.StopTyping();
-                    dialogBar.HideSprites();
-                    history.RemoveAt(history.Count - 1);
-                    StoryScene scene = history[history.Count - 1];
-                    history.RemoveAt(history.Count - 1);
-                    PlayScene(scene, scene.sentences.Count - 2, false);
-                }
-                else
-                {
-                    dialogBar.GoBack();
-                }
-            }
-        }*/
+            sentence = dialogBar.GetSentenceIndex(),
+            prevScenes = historyIndicies
+        };
+
+        SaveController.SaveGame(data);
+        SceneManager.LoadScene(menuScene);
     }
 
     private void OnDialogBarButtonClick()
