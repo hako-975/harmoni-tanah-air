@@ -27,9 +27,12 @@ public class DialogBarController : MonoBehaviour
     public Dictionary<Speaker, SpriteController> sprites;
     public GameObject spritesGameObject;
 
+    private Coroutine typingCoroutine;
+    private float speedFactor = 1f;
+
     private enum State
     {
-        PLAYING, COMPLETED
+        PLAYING, SPEEDED_UP, COMPLETED
     }
 
     private void Start()
@@ -79,7 +82,7 @@ public class DialogBarController : MonoBehaviour
 
     public bool IsCompleted()
     {
-        return state == State.COMPLETED;
+        return state == State.COMPLETED || state == State.SPEEDED_UP;
     }
 
     public bool IsPlaying()
@@ -120,9 +123,22 @@ public class DialogBarController : MonoBehaviour
 
     public void PlayNextSentence()
     {
-        StartCoroutine(TypeText(currentScene.sentences[++sentenceIndex].text));
+        speedFactor = 1f;
+        typingCoroutine = StartCoroutine(TypeText(currentScene.sentences[++sentenceIndex].text));
         SetNameBox();
         ActSpeakers();
+    }
+
+    public void SpeedUp()
+    {
+        state = State.SPEEDED_UP;
+        speedFactor = 0.25f;
+    }
+
+    public void StopTyping()
+    {
+        state = State.COMPLETED;
+        StopCoroutine(typingCoroutine);
     }
 
     private IEnumerator TypeText(string text)
@@ -135,7 +151,7 @@ public class DialogBarController : MonoBehaviour
         while (state != State.COMPLETED)
         {
             textBoxText.text += text[wordIndex];
-            yield return new WaitForSeconds(PlayerPrefs.GetFloat("TextSpeed", 0.05f));
+            yield return new WaitForSeconds(speedFactor * PlayerPrefs.GetFloat("TextSpeed", 0.05f));
 
             if (++wordIndex == text.Length)
             {

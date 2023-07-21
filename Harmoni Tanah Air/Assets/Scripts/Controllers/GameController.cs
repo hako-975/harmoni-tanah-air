@@ -38,6 +38,16 @@ public class GameController : MonoBehaviour
 
     private Button dialogBarButton;
 
+    private void Awake()
+    {
+        GameObject[] musicObj = GameObject.FindGameObjectsWithTag("MusicController");
+        
+        foreach (GameObject music in musicObj)
+        {
+            Destroy(music);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {

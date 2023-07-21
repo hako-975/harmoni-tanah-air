@@ -9,6 +9,9 @@ public class SplashScreenController : MonoBehaviour
     [SerializeField]
     private Image tapToStart;
 
+    [SerializeField]
+    private GameObject tapToStartButton;
+
     private void Awake()
     {
         tapToStart.raycastTarget = false;
@@ -26,9 +29,10 @@ public class SplashScreenController : MonoBehaviour
 
     private IEnumerator WaitAnim()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         tapToStart.GetComponent<Animator>().SetTrigger("White Screen");
         yield return new WaitForSeconds(1f);
+        tapToStartButton.GetComponent<Animator>().SetTrigger("Tap To Start Fade");
         tapToStart.raycastTarget = true;
     }
 }
