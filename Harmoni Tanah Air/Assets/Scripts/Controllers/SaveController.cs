@@ -1,26 +1,32 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SaveController : MonoBehaviour
 {
-    private static readonly string SAVED_GAME = "savedGame";
+    public Button saveButton1;
+    public Button saveButton2;
+    public Button saveButton3;
 
-    public static void SaveGame(SaveData data)
+    private static readonly string SAVED_GAME = "SavedGame";
+
+    public void SaveGame(int slot, SaveData data)
     {
-        PlayerPrefs.SetString(SAVED_GAME, JsonUtility.ToJson(data));
+        PlayerPrefs.SetString(SAVED_GAME + slot, JsonUtility.ToJson(data));
     }
 
-    public static SaveData LoadGame()
+    public SaveData LoadGame(int slot)
     {
-        return JsonUtility.FromJson<SaveData>(PlayerPrefs.GetString(SAVED_GAME));
+        return JsonUtility.FromJson<SaveData>(PlayerPrefs.GetString(SAVED_GAME + slot));
     }
 
-    public static bool IsGameSaved()
+    public bool IsGameSaved(int slot)
     {
-        return PlayerPrefs.HasKey(SAVED_GAME);
+        return PlayerPrefs.HasKey(SAVED_GAME + slot);
     }
 
-    public static void ClearSavedGame()
+    public void ClearSavedGame(int slot)
     {
-        PlayerPrefs.DeleteKey(SAVED_GAME);
+        PlayerPrefs.DeleteKey(SAVED_GAME + slot);
     }
 }

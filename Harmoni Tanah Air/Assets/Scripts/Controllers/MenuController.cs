@@ -17,7 +17,7 @@ public class MenuController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        loadButton.interactable = SaveController.IsGameSaved();
+        //loadButton.interactable = SaveController.IsGameSaved();
         loadButton.onClick.AddListener(LoadGameButton);
 
         newGameButton.onClick.AddListener(NewGameButton);
@@ -34,7 +34,6 @@ public class MenuController : MonoBehaviour
 
     public void NewGameButton()
     {
-        SaveController.ClearSavedGame();
         LoadGameButton();
     }
 

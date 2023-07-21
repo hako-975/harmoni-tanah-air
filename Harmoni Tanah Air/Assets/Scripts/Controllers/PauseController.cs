@@ -19,8 +19,6 @@ public class PauseController : MonoBehaviour
 
     [Header("Buttons")]
     [SerializeField]
-    private Button pauseButton;
-    [SerializeField]
     private Button resumeButton;
     [SerializeField]
     private Button historyButton;
@@ -41,9 +39,6 @@ public class PauseController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pausePanel.SetActive(false);
-        
-        pauseButton.onClick.AddListener(OnPauseButtonClick);
         resumeButton.onClick.AddListener(OnResumeButtonClick);
         historyButton.onClick.AddListener(OnHistoryButtonClick);
         saveButton.onClick.AddListener(OnSaveButtonClick);
@@ -54,7 +49,7 @@ public class PauseController : MonoBehaviour
         mainMenuNoButton.onClick.AddListener(OnMainMenuNoButtonClick);
     }
     
-    private void OnPauseButtonClick()
+    public void OnPauseButtonClick()
     {
         Time.timeScale = 0f;
         DisabledAllPanel();
@@ -62,7 +57,7 @@ public class PauseController : MonoBehaviour
         pausePanel.SetActive(true);
     }
 
-    private void OnResumeButtonClick()
+    public void OnResumeButtonClick()
     {
         Time.timeScale = 1f;
         pausePanel.SetActive(false);

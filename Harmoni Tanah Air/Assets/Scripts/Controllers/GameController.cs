@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
@@ -25,12 +27,25 @@ public class GameController : MonoBehaviour
 
     [SerializeField]
     private Button autoplayButton;
+    
+    [SerializeField]
+    private Button pauseButton;
+
+    [SerializeField]
+    private PauseController pauseController;
+
+    [SerializeField]
+    private SaveController saveController;
+    
 
     private bool autoplayBool = false;
     
     private bool isAutoplayRunning = false;
 
     private List<StoryScene> history = new List<StoryScene>();
+
+    private List<StoryScene> storySceneSaveData = new List<StoryScene>();
+    private GameScene currentSceneSaveData;
 
     private State state = State.IDLE;
 
@@ -56,17 +71,18 @@ public class GameController : MonoBehaviour
     {
         dialogBarButton = dialogBar.GetComponent<Button>();
 
-        if (SaveController.IsGameSaved())
+        // data 1
+        if (saveController.IsGameSaved(1))
         {
-            SaveData data = SaveController.LoadGame();
+            SaveData data = saveController.LoadGame(1);
             data.prevScenes.ForEach(scene =>
             {
-                history.Add(this.data.scenes[scene] as StoryScene);
+                storySceneSaveData.Add(this.data.scenes[scene] as StoryScene);
             });
 
-            currentScene = history[history.Count - 1];
-            history.RemoveAt(history.Count - 1);
-            dialogBar.SetSentenceIndex(data.sentence - 1);
+            currentSceneSaveData = storySceneSaveData[storySceneSaveData.Count - 1];
+            saveController.saveButton1.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (currentSceneSaveData as StoryScene).sentences[data.sentence].text;
+            saveController.saveButton1.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = data.dateSaved.ToString();
         }
 
         if (currentScene is StoryScene)
@@ -77,36 +93,52 @@ public class GameController : MonoBehaviour
             spriteSwitcherController.SetImage(storyScene.background);
             PlayAudio(storyScene.sentences[dialogBar.GetSentenceIndex()]);
         }
-
+        
+        pauseButton.onClick.AddListener(pauseController.OnPauseButtonClick);
         autoplayButton.onClick.AddListener(OnAutoplayButtonClick);
         dialogBarButton.onClick.AddListener(OnDialogBarButtonClick);
+        saveController.saveButton1.onClick.AddListener(delegate { OnSaveButtonClick(1); });
+        saveController.saveButton2.onClick.AddListener(delegate { OnSaveButtonClick(2); });
+        saveController.saveButton3.onClick.AddListener(delegate { OnSaveButtonClick(3); });
     }
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (pauseController.gameObject.activeSelf)
+            {
+                pauseController.OnResumeButtonClick();
+            }
+            else
+            {
+                pauseController.OnPauseButtonClick();
+            }
+        }
+
         if (autoplayBool && !isAutoplayRunning)
         {
             StartCoroutine(Autoplay());
         }
     }
 
-    private void OnSaveButtonClick()
+    private void OnSaveButtonClick(int slot)
     {
-        Debug.Log("Saved");
         List<int> historyIndicies = new List<int>();
         history.ForEach(scene =>
         {
             historyIndicies.Add(this.data.scenes.IndexOf(scene));
         });
 
+        DateTime currentDateTime = DateTime.Now;
         SaveData data = new SaveData
         {
             sentence = dialogBar.GetSentenceIndex(),
-            prevScenes = historyIndicies
+            prevScenes = historyIndicies,
+            dateSaved = currentDateTime
         };
 
-        SaveController.SaveGame(data);
-        PlayerPrefsController.instance.SetNextScene("MainMenu");
+        saveController.SaveGame(slot, data);
     }
 
     private void OnAutoplayButtonClick()
