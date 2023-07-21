@@ -45,6 +45,18 @@ public class SpriteSwitcherController : MonoBehaviour
         }
     }
 
+    public void SyncImages()
+    {
+        if (!isSwitched)
+        {
+            image2.sprite = image1.sprite;
+        }
+        else
+        {
+            image1.sprite = image2.sprite;
+        }
+    }
+
     public Sprite GetImage()
     {
         if (!isSwitched)

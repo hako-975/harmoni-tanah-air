@@ -99,51 +99,87 @@ public class GameController : MonoBehaviour
             SaveController.SaveGame(data);
             SceneManager.LoadScene(menuScene);
         }
+
+        // go back
+        /*if (Input.GetMouseButtonDown(1))
+        {
+            if (dialogBar.IsFirstSentence())
+            {
+                if (history.Count > 1)
+                {
+                    dialogBar.StopTyping();
+                    dialogBar.HideSprites();
+                    history.RemoveAt(history.Count - 1);
+                    StoryScene scene = history[history.Count - 1];
+                    history.RemoveAt(history.Count - 1);
+                    PlayScene(scene, scene.sentences.Count - 2, false);
+                }
+                else
+                {
+                    dialogBar.GoBack();
+                }
+            }
+        }*/
     }
 
     private void OnDialogBarButtonClick()
     {
-        if (dialogBar.IsPlaying())
+        if (state == State.IDLE)
         {
-            dialogBar.SetStateCompleted();
-            return;
-        }
-        else if (state == State.IDLE && dialogBar.IsCompleted())
-        {
-            if (dialogBar.IsLastSentence())
+            if (dialogBar.IsCompleted())
             {
-                PlayScene((currentScene as StoryScene).nextScene);
+                dialogBar.StopTyping();
+                if (dialogBar.IsLastSentence())
+                {
+                    PlayScene((currentScene as StoryScene).nextScene);
+                }
+                else
+                {
+                    dialogBar.PlayNextSentence();
+                    PlayAudio((currentScene as StoryScene).sentences[dialogBar.GetSentenceIndex()]);
+                }
             }
             else
             {
-                dialogBar.PlayNextSentence();
-                PlayAudio((currentScene as StoryScene).sentences[dialogBar.GetSentenceIndex()]);
+                dialogBar.SpeedUp();
             }
         }
     }
 
-    public void PlayScene(GameScene scene, int sentenceIndex = -1)
+    public void PlayScene(GameScene scene, int sentenceIndex = -1, bool isAnimated = true)
     {
-        StartCoroutine(SwitchScene(scene, sentenceIndex));
+        StartCoroutine(SwitchScene(scene, sentenceIndex, isAnimated));
     }
 
-    private IEnumerator SwitchScene(GameScene scene, int sentenceIndex = -1)
+    private IEnumerator SwitchScene(GameScene scene, int sentenceIndex = -1, bool isAnimated = true)
     {
         state = State.ANIMATE;
         currentScene = scene;
-        dialogBar.Hide();
-        yield return new WaitForSeconds(1f);
+        if (isAnimated)
+        {
+            dialogBar.Hide();
+            yield return new WaitForSeconds(1f);
+        }
+        
         if (scene is StoryScene)
         {
             StoryScene storyScene = scene as StoryScene;
             history.Add(storyScene);
-            spriteSwitcherController.SwitchImage(storyScene.background);
             PlayAudio(storyScene.sentences[sentenceIndex + 1]);
-            yield return new WaitForSeconds(1f);
-            dialogBar.ClearText();
-            yield return new WaitForSeconds(1f);
-            dialogBar.Show();
-            dialogBar.PlayScene(storyScene, sentenceIndex);
+            if (isAnimated)
+            {
+                spriteSwitcherController.SwitchImage(storyScene.background);
+                yield return new WaitForSeconds(1f);
+                dialogBar.ClearText();
+                yield return new WaitForSeconds(1f);
+                dialogBar.Show();
+            }
+            else
+            {
+                spriteSwitcherController.SetImage(storyScene.background);
+                dialogBar.ClearText();
+            }
+            dialogBar.PlayScene(storyScene, sentenceIndex, isAnimated);
             state = State.IDLE;
         }
         else if (scene is ChooseScene)

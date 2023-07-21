@@ -11,10 +11,9 @@ public class DialogBarController : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI textBoxText;
 
-    [SerializeField]
-    private StoryScene currentScene;
-
     private TextMeshProUGUI nameBoxText;
+
+    private StoryScene currentScene;
 
     private int sentenceIndex = -1;
 
@@ -38,6 +37,7 @@ public class DialogBarController : MonoBehaviour
     private void Start()
     {
         sprites = new Dictionary<Speaker, SpriteController>();
+
         nameBoxText = nameBoxTextUI.GetComponentInChildren<TextMeshProUGUI>();
 
         animator = GetComponent<Animator>();
@@ -73,16 +73,16 @@ public class DialogBarController : MonoBehaviour
         textBoxText.text = "";
     }
 
-    public void PlayScene(StoryScene scene, int sentenceIndex = -1)
+    public void PlayScene(StoryScene scene, int sentenceIndex = -1, bool isAnimated = true)
     {
         currentScene = scene;
         this.sentenceIndex = sentenceIndex;
-        PlayNextSentence();
+        PlayNextSentence(isAnimated);
     }
 
     public bool IsCompleted()
     {
-        return state == State.COMPLETED || state == State.SPEEDED_UP;
+        return state == State.COMPLETED;
     }
 
     public bool IsPlaying()
@@ -90,15 +90,9 @@ public class DialogBarController : MonoBehaviour
         return state == State.PLAYING;
     }
 
-    public void SetStateCompleted()
+    public bool IsFirstSentence()
     {
-        state = State.COMPLETED;
-
-        ClearText();
-
-        textBoxText.text = currentScene.sentences[sentenceIndex].text;
-
-        SetNameBox();
+        return sentenceIndex == 0;
     }
 
     public bool IsLastSentence()
@@ -121,12 +115,18 @@ public class DialogBarController : MonoBehaviour
         }
     }
 
-    public void PlayNextSentence()
+    public void PlayNextSentence(bool isAnimated = true)
     {
-        speedFactor = 1f;
-        typingCoroutine = StartCoroutine(TypeText(currentScene.sentences[++sentenceIndex].text));
-        SetNameBox();
-        ActSpeakers();
+        sentenceIndex++;
+        PlaySentence(isAnimated);
+    }
+
+    public void GoBack()
+    {
+        sentenceIndex--;
+        StopTyping();
+        HideSprites();
+        PlaySentence(false);
     }
 
     public void SpeedUp()
@@ -139,6 +139,24 @@ public class DialogBarController : MonoBehaviour
     {
         state = State.COMPLETED;
         StopCoroutine(typingCoroutine);
+    }
+
+    public void HideSprites()
+    {
+        while (spritesGameObject.transform.childCount > 0)
+        {
+            DestroyImmediate(spritesGameObject.transform.GetChild(0).gameObject);
+        }
+
+        sprites.Clear();
+    }
+
+    private void PlaySentence(bool isAnimated = true)
+    {
+        speedFactor = 1f;
+        typingCoroutine = StartCoroutine(TypeText(currentScene.sentences[sentenceIndex].text));
+        SetNameBox();
+        ActSpeakers(isAnimated);
     }
 
     private IEnumerator TypeText(string text)
@@ -161,59 +179,43 @@ public class DialogBarController : MonoBehaviour
         }
     }
 
-    private void ActSpeakers()
+    private void ActSpeakers(bool isAnimated = true)
     {
         List<StoryScene.Sentence.Action> actions = currentScene.sentences[sentenceIndex].actions;
         for (int i = 0; i < actions.Count; i++)
         {
-            ActSpeaker(actions[i]);
+            ActSpeaker(actions[i], isAnimated);
         }
     }
 
-    private void ActSpeaker(StoryScene.Sentence.Action action)
+    private void ActSpeaker(StoryScene.Sentence.Action action, bool isAnimated = true)
     {
-        SpriteController controller = null;
-        
-        switch (action.actionType)
+        SpriteController controller;
+
+        if (!sprites.ContainsKey(action.speaker))
         {
-            case StoryScene.Sentence.Action.Type.NONE:
-                if (sprites.ContainsKey(action.speaker))
-                {
-                    controller = sprites[action.speaker];
-                }
-                break;
-            case StoryScene.Sentence.Action.Type.APPEAR:
-                if (!sprites.ContainsKey(action.speaker))
-                {
-                    controller = Instantiate(action.speaker.prefab.gameObject, spritesGameObject.transform).GetComponent<SpriteController>();
-                    sprites.Add(action.speaker, controller);
-                }
-                else
-                {
-                    controller = sprites[action.speaker];
-                }
-                controller.Setup(action.speaker.sprites[action.spriteIndex]);
-                controller.Show(action.coords);
-                return;
-            case StoryScene.Sentence.Action.Type.MOVE:
-                if (sprites.ContainsKey(action.speaker))
-                {
-                    controller = sprites[action.speaker];
-                    controller.Move(action.coords, action.moveSpeed);
-                }
-                break;
-            case StoryScene.Sentence.Action.Type.DISAPPEAR:
-                if (sprites.ContainsKey(action.speaker))
-                {
-                    controller = sprites[action.speaker];
-                    controller.Hide();
-                }
-                break;
+            controller = Instantiate(action.speaker.prefab.gameObject, spritesGameObject.transform).GetComponent<SpriteController>();
+            sprites.Add(action.speaker, controller);
+        }
+        else
+        {
+            controller = sprites[action.speaker];
         }
 
-        if (controller != null)
+
+        switch (action.actionType)
         {
-            controller.SwitchSprite(action.speaker.sprites[action.spriteIndex]);
+            case StoryScene.Sentence.Action.Type.APPEAR:
+                controller.Setup(action.speaker.sprites[action.spriteIndex]);
+                controller.Show(action.coords, isAnimated);
+                return;
+            case StoryScene.Sentence.Action.Type.MOVE:
+                controller.Move(action.coords, action.moveSpeed, isAnimated);
+                break;
+            case StoryScene.Sentence.Action.Type.DISAPPEAR:
+                controller.Hide(isAnimated);
+                break;
         }
+        controller.SwitchSprite(action.speaker.sprites[action.spriteIndex], isAnimated);
     }
 }
