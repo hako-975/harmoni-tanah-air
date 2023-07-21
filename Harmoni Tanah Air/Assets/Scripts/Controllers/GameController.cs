@@ -24,9 +24,6 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private DataHolder data;
 
-    [SerializeField]
-    private string menuScene;
-
     private List<StoryScene> history = new List<StoryScene>();
 
     private State state = State.IDLE;
@@ -94,7 +91,7 @@ public class GameController : MonoBehaviour
         };
 
         SaveController.SaveGame(data);
-        SceneManager.LoadScene(menuScene);
+        PlayerPrefsController.instance.SetNextScene("MainMenu");
     }
 
     private void OnDialogBarButtonClick()

@@ -57,6 +57,7 @@ public class PauseController : MonoBehaviour
     
     private void OnPauseButtonClick()
     {
+        Time.timeScale = 0f;
         DisabledAllPanel();
         historyPanel.SetActive(true);
         pausePanel.SetActive(true);
@@ -64,6 +65,7 @@ public class PauseController : MonoBehaviour
 
     private void OnResumeButtonClick()
     {
+        Time.timeScale = 1f;
         pausePanel.SetActive(false);
     }
 
@@ -95,7 +97,8 @@ public class PauseController : MonoBehaviour
 
     private void OnMainMenuYesButtonClick()
     {
-        SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1f;
+        PlayerPrefsController.instance.SetNextScene("MainMenu");
     }
 
     private void OnMainMenuNoButtonClick()

@@ -5,9 +5,6 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour
 {
     [SerializeField]
-    private string loaderScene;
-
-    [SerializeField]
     private Button newGameButton;
 
     [SerializeField]
@@ -43,7 +40,7 @@ public class MenuController : MonoBehaviour
 
     public void LoadGameButton()
     {
-        SceneManager.LoadScene(loaderScene, LoadSceneMode.Additive);
+        PlayerPrefsController.instance.SetNextScene("Gameplay");
     }
 
     public void ShowSettings()

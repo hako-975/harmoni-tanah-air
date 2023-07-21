@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class PlayerPrefsController : MonoBehaviour
 {
@@ -25,7 +26,18 @@ public class PlayerPrefsController : MonoBehaviour
         soundMixer.SetFloat("volume", -50 + GetSoundVolume() / 2);
     }
 
+    public string GetNextScene()
+    {
+        return PlayerPrefs.GetString("NextScene", "MainMenu");
+    }
 
+    public void SetNextScene(string nameScene)
+    {
+        Time.timeScale = 1;
+
+        PlayerPrefs.SetString("NextScene", nameScene);
+        SceneManager.LoadScene("LoadingScreen");
+    }
     public int GetTextSpeed()
     {
         return PlayerPrefs.GetInt("TextSpeed", 50);

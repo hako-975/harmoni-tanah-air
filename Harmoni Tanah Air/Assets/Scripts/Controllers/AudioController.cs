@@ -40,7 +40,7 @@ public class AudioController : MonoBehaviour
         musicSource.clip = music;
         musicSource.Play();
 
-        while (musicSource.volume < 0.5f)
+        while (musicSource.volume < 1f)
         {
             musicSource.volume += 0.05f;
             yield return new WaitForSeconds(0.05f);

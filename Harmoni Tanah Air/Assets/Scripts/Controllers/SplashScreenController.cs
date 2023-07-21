@@ -1,8 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class SplashScreenController : MonoBehaviour
 {
@@ -24,7 +22,7 @@ public class SplashScreenController : MonoBehaviour
     
     public void TapToStartButton()
     {
-        SceneManager.LoadScene("MainMenu");
+        PlayerPrefsController.instance.SetNextScene("MainMenu");
     }
 
     private IEnumerator WaitAnim()
