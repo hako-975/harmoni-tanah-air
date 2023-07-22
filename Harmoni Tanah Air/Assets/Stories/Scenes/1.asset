@@ -41,7 +41,7 @@ MonoBehaviour:
       actionType: 3
       coords: {x: 0, y: 115}
       moveSpeed: 0
-    music: {fileID: 0}
+    music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
     sound: {fileID: 8300000, guid: 81fae3d7b961793458e820cf1f2a2fa3, type: 3}
   background: {fileID: 21300000, guid: ee82eaf77c1b32f44a3419e68d2d7984, type: 3}
   nextScene: {fileID: 11400000, guid: 7abd9eb8fa25a024395b1cd10b6a2c2b, type: 2}

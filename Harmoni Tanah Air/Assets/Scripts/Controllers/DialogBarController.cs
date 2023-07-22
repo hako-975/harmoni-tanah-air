@@ -50,6 +50,11 @@ public class DialogBarController : MonoBehaviour
 
     public void SetSentenceIndex(int sentenceIndex)
     {
+        if (sentenceIndex < -1)
+        {
+            sentenceIndex = -1;
+        }
+
         this.sentenceIndex = sentenceIndex;
     }
 
