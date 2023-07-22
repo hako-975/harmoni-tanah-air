@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using TMPro;
+using System.Globalization;
 
 public class GameController : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class GameController : MonoBehaviour
     private AudioController audioController;
 
     [SerializeField]
-    private DataHolder data;
+    private DataHolder dataHolder;
 
     [SerializeField]
     private Button autoplayButton;
@@ -71,19 +72,12 @@ public class GameController : MonoBehaviour
     {
         dialogBarButton = dialogBar.GetComponent<Button>();
 
-        // data 1
-        if (saveController.IsGameSaved(1))
-        {
-            SaveData data = saveController.LoadGame(1);
-            data.prevScenes.ForEach(scene =>
-            {
-                storySceneSaveData.Add(this.data.scenes[scene] as StoryScene);
-            });
-
-            currentSceneSaveData = storySceneSaveData[storySceneSaveData.Count - 1];
-            saveController.saveButton1.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (currentSceneSaveData as StoryScene).sentences[data.sentence].text;
-            saveController.saveButton1.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = data.dateSaved.ToString();
-        }
+        // load data 1 for showing data in save panel
+        LoadSaveData(1);
+        // load data 2 for showing data in save panel
+        LoadSaveData(2);
+        // load data 3 for showing data in save panel
+        LoadSaveData(3);
 
         if (currentScene is StoryScene)
         {
@@ -122,12 +116,69 @@ public class GameController : MonoBehaviour
         }
     }
 
+    private void LoadSaveData(int slot)
+    {
+        if (saveController.IsGameSaved(slot))
+        {
+            SaveData data = saveController.LoadGame(slot);
+            data.prevScenes.ForEach(scene =>
+            {
+                storySceneSaveData.Add(this.dataHolder.scenes[scene] as StoryScene);
+            });
+
+            currentSceneSaveData = storySceneSaveData[storySceneSaveData.Count - 1];
+            switch (slot)
+            {
+                case 1:
+                    saveController.saveButton1.GetComponent<Image>().color = Color.white;
+                    saveController.saveButton1.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = 24;
+                    saveController.saveButton1.transform.GetChild(0).GetComponent<TextMeshProUGUI>().alignment = TextAlignmentOptions.TopLeft;
+                    saveController.saveButton1.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (currentSceneSaveData as StoryScene).sentences[data.sentence].text;
+                    saveController.saveButton1.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = data.dateSaved;
+                    break;
+                case 2:
+                    saveController.saveButton2.GetComponent<Image>().color = Color.white;
+                    saveController.saveButton2.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = 24;
+                    saveController.saveButton2.transform.GetChild(0).GetComponent<TextMeshProUGUI>().alignment = TextAlignmentOptions.TopLeft;
+                    saveController.saveButton2.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (currentSceneSaveData as StoryScene).sentences[data.sentence].text;
+                    saveController.saveButton2.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = data.dateSaved;
+                    break;
+                case 3:
+                    saveController.saveButton3.GetComponent<Image>().color = Color.white;
+                    saveController.saveButton3.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = 24;
+                    saveController.saveButton3.transform.GetChild(0).GetComponent<TextMeshProUGUI>().alignment = TextAlignmentOptions.TopLeft;
+                    saveController.saveButton3.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (currentSceneSaveData as StoryScene).sentences[data.sentence].text;
+                    saveController.saveButton3.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = data.dateSaved;
+                    break;
+            }
+        }
+    }
+
     private void OnSaveButtonClick(int slot)
+    {
+        if (saveController.IsGameSaved(slot))
+        {
+            saveController.confirmSavePanel.SetActive(true);
+            saveController.confirmSaveYesButton.onClick.AddListener( delegate { SaveData(slot); });
+            saveController.confirmSaveNoButton.onClick.AddListener(CloseConfirmSavePanel);
+        }
+        else
+        {
+            SaveData(slot);
+        }
+    }
+
+    private void CloseConfirmSavePanel()
+    {
+        saveController.confirmSavePanel.SetActive(false);
+    }
+
+    private void SaveData(int slot)
     {
         List<int> historyIndicies = new List<int>();
         history.ForEach(scene =>
         {
-            historyIndicies.Add(this.data.scenes.IndexOf(scene));
+            historyIndicies.Add(this.dataHolder.scenes.IndexOf(scene));
         });
 
         DateTime currentDateTime = DateTime.Now;
@@ -135,11 +186,15 @@ public class GameController : MonoBehaviour
         {
             sentence = dialogBar.GetSentenceIndex(),
             prevScenes = historyIndicies,
-            dateSaved = currentDateTime
+            dateSaved = currentDateTime.ToString("dddd, dd MMMM yyyy, HH:mm", new CultureInfo("id-ID"))
         };
 
         saveController.SaveGame(slot, data);
+
+        LoadSaveData(slot);
+        CloseConfirmSavePanel();
     }
+
 
     private void OnAutoplayButtonClick()
     {
