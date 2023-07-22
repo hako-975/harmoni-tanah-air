@@ -13,7 +13,7 @@ public class PlayerPrefsController : MonoBehaviour
         instance = this;
     }
     #endregion
-
+    
     [SerializeField]
     private AudioMixer musicMixer;
     [SerializeField]
@@ -77,6 +77,21 @@ public class PlayerPrefsController : MonoBehaviour
     public void SetSoundVolume(int volume)
     {
         PlayerPrefs.SetInt("SoundVolume", volume);
+    }
+
+    public int GetSlotSceneLoadGame()
+    {
+        return PlayerPrefs.GetInt("SlotSceneLoadGame");
+    }
+
+    public void SetSlotSceneLoadGame(int slot)
+    {
+        PlayerPrefs.SetInt("SlotSceneLoadGame", slot);
+    }
+
+    public bool IsHasSlotSceneLoadGame()
+    {
+        return PlayerPrefs.HasKey("SlotSceneLoadGame");
     }
 
     public void DeleteKey(string key)

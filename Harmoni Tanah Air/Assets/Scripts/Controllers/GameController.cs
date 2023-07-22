@@ -38,6 +38,9 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private SaveController saveController;
     
+    [SerializeField]
+    private LoadController loadController;
+
 
     private bool autoplayBool = false;
     
@@ -70,30 +73,42 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dialogBarButton = dialogBar.GetComponent<Button>();
+        if (PlayerPrefsController.instance.IsHasSlotSceneLoadGame())
+        {
+            SaveData data = saveController.LoadGame(PlayerPrefsController.instance.GetSlotSceneLoadGame());
+            data.prevScenes.ForEach(scene =>
+            {
+                history.Add(dataHolder.scenes[scene] as StoryScene);
+            });
 
-        // load data 1 for showing data in save panel
-        LoadSaveData(1);
-        // load data 2 for showing data in save panel
-        LoadSaveData(2);
-        // load data 3 for showing data in save panel
-        LoadSaveData(3);
+            currentScene = history[history.Count - 1];
+            history.RemoveAt(history.Count - 1);
+            dialogBar.SetSentenceIndex(data.sentence - 1);
+            PlayerPrefsController.instance.DeleteKey("SlotSceneLoadGame");
+        }
 
         if (currentScene is StoryScene)
         {
             StoryScene storyScene = currentScene as StoryScene;
             history.Add(storyScene);
-            dialogBar.PlayScene(storyScene, dialogBar.GetSentenceIndex());
+            dialogBar.PlayScene(storyScene, dialogBar.GetSentenceIndex(), true);
             spriteSwitcherController.SetImage(storyScene.background);
             PlayAudio(storyScene.sentences[dialogBar.GetSentenceIndex()]);
         }
-        
+
+        dialogBarButton = dialogBar.GetComponent<Button>();
+
         pauseButton.onClick.AddListener(pauseController.OnPauseButtonClick);
         autoplayButton.onClick.AddListener(OnAutoplayButtonClick);
         dialogBarButton.onClick.AddListener(OnDialogBarButtonClick);
+
         saveController.saveButton1.onClick.AddListener(delegate { OnSaveButtonClick(1); });
         saveController.saveButton2.onClick.AddListener(delegate { OnSaveButtonClick(2); });
         saveController.saveButton3.onClick.AddListener(delegate { OnSaveButtonClick(3); });
+
+        loadController.loadButton1.onClick.AddListener(delegate { OnLoadButtonClick(1); });
+        loadController.loadButton2.onClick.AddListener(delegate { OnLoadButtonClick(2); });
+        loadController.loadButton3.onClick.AddListener(delegate { OnLoadButtonClick(3); });
     }
 
     void Update()
@@ -116,14 +131,14 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private void LoadSaveData(int slot)
+    public void GetDataSaveButton(int slot)
     {
         if (saveController.IsGameSaved(slot))
         {
             SaveData data = saveController.LoadGame(slot);
             data.prevScenes.ForEach(scene =>
             {
-                storySceneSaveData.Add(this.dataHolder.scenes[scene] as StoryScene);
+                storySceneSaveData.Add(dataHolder.scenes[scene] as StoryScene);
             });
 
             currentSceneSaveData = storySceneSaveData[storySceneSaveData.Count - 1];
@@ -154,6 +169,44 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void GetDataLoadButton(int slot)
+    {
+        if (saveController.IsGameSaved(slot))
+        {
+            SaveData data = saveController.LoadGame(slot);
+            data.prevScenes.ForEach(scene =>
+            {
+                storySceneSaveData.Add(dataHolder.scenes[scene] as StoryScene);
+            });
+
+            currentSceneSaveData = storySceneSaveData[storySceneSaveData.Count - 1];
+            switch (slot)
+            {
+                case 1:
+                    loadController.loadButton1.GetComponent<Image>().color = Color.white;
+                    loadController.loadButton1.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = 24;
+                    loadController.loadButton1.transform.GetChild(0).GetComponent<TextMeshProUGUI>().alignment = TextAlignmentOptions.TopLeft;
+                    loadController.loadButton1.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (currentSceneSaveData as StoryScene).sentences[data.sentence].text;
+                    loadController.loadButton1.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = data.dateSaved;
+                    break;
+                case 2:
+                    loadController.loadButton2.GetComponent<Image>().color = Color.white;
+                    loadController.loadButton2.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = 24;
+                    loadController.loadButton2.transform.GetChild(0).GetComponent<TextMeshProUGUI>().alignment = TextAlignmentOptions.TopLeft;
+                    loadController.loadButton2.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (currentSceneSaveData as StoryScene).sentences[data.sentence].text;
+                    loadController.loadButton2.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = data.dateSaved;
+                    break;
+                case 3:
+                    loadController.loadButton3.GetComponent<Image>().color = Color.white;
+                    loadController.loadButton3.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = 24;
+                    loadController.loadButton3.transform.GetChild(0).GetComponent<TextMeshProUGUI>().alignment = TextAlignmentOptions.TopLeft;
+                    loadController.loadButton3.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (currentSceneSaveData as StoryScene).sentences[data.sentence].text;
+                    loadController.loadButton3.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = data.dateSaved;
+                    break;
+            }
+        }
+    }
+
     private void OnSaveButtonClick(int slot)
     {
         if (saveController.IsGameSaved(slot))
@@ -178,7 +231,7 @@ public class GameController : MonoBehaviour
         List<int> historyIndicies = new List<int>();
         history.ForEach(scene =>
         {
-            historyIndicies.Add(this.dataHolder.scenes.IndexOf(scene));
+            historyIndicies.Add(dataHolder.scenes.IndexOf(scene));
         });
 
         DateTime currentDateTime = DateTime.Now;
@@ -191,10 +244,31 @@ public class GameController : MonoBehaviour
 
         saveController.SaveGame(slot, data);
 
-        LoadSaveData(slot);
+        GetDataSaveButton(slot);
         CloseConfirmSavePanel();
     }
 
+    private void OnLoadButtonClick(int slot)
+    {
+        if (saveController.IsGameSaved(slot))
+        {
+            loadController.confirmLoadPanel.SetActive(true);
+            loadController.confirmLoadYesButton.onClick.AddListener(delegate { LoadData(slot); });
+            loadController.confirmLoadNoButton.onClick.AddListener(CloseConfirmLoadPanel);
+        }
+    }
+
+    private void LoadData(int slot)
+    {
+        PlayerPrefsController.instance.SetSlotSceneLoadGame(slot);
+        PlayerPrefsController.instance.SetNextScene("Gameplay");
+    }
+
+
+    private void CloseConfirmLoadPanel()
+    {
+        loadController.confirmLoadPanel.SetActive(false);
+    }
 
     private void OnAutoplayButtonClick()
     {
