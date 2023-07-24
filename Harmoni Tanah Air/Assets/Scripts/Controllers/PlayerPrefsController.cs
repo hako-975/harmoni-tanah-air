@@ -19,11 +19,33 @@ public class PlayerPrefsController : MonoBehaviour
     [SerializeField]
     private AudioMixer soundMixer;
 
+    public static readonly string SAVED_GAME = "SavedGame";
+    
     void Start()
     {
         // load settings configuration on start
         musicMixer.SetFloat("volume", -50 + GetMusicVolume() / 2);
         soundMixer.SetFloat("volume", -50 + GetSoundVolume() / 2);
+    }
+
+    public void SaveGame(int slot, SaveData data)
+    {
+        PlayerPrefs.SetString(SAVED_GAME + slot, JsonUtility.ToJson(data));
+    }
+
+    public SaveData LoadGame(int slot)
+    {
+        return JsonUtility.FromJson<SaveData>(PlayerPrefs.GetString(SAVED_GAME + slot));
+    }
+
+    public bool IsGameSaved(int slot)
+    {
+        return PlayerPrefs.HasKey(SAVED_GAME + slot);
+    }
+
+    public void ClearSavedGame(int slot)
+    {
+        PlayerPrefs.DeleteKey(SAVED_GAME + slot);
     }
 
     public string GetNextScene()
@@ -96,7 +118,7 @@ public class PlayerPrefsController : MonoBehaviour
 
     public bool IsHasGameSaved()
     {
-        return PlayerPrefs.HasKey(SaveController.SAVED_GAME + 1) || PlayerPrefs.HasKey(SaveController.SAVED_GAME + 2) || PlayerPrefs.HasKey(SaveController.SAVED_GAME + 3);
+        return PlayerPrefs.HasKey(SAVED_GAME + 1) || PlayerPrefs.HasKey(SAVED_GAME + 2) || PlayerPrefs.HasKey(SAVED_GAME + 3);
     }
 
     public void DeleteKey(string key)

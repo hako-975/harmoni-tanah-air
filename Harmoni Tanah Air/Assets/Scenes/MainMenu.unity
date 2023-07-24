@@ -6066,6 +6066,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newGameButton: {fileID: 403809654}
   loadButton: {fileID: 1376925549}
+  loadDataButton1: {fileID: 786963291}
+  loadDataButton2: {fileID: 479042799}
+  loadDataButton3: {fileID: 1949232492}
+  dataHolder: {fileID: 11400000, guid: 18f24c050b98f5840b3855ce85ee0821, type: 2}
 --- !u!95 &1704236977
 Animator:
   serializedVersion: 5

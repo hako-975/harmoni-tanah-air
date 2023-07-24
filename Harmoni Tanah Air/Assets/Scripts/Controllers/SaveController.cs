@@ -14,7 +14,6 @@ public class SaveController : MonoBehaviour
     [SerializeField]
     GameController gameController;
 
-    public static readonly string SAVED_GAME = "SavedGame";
 
     void Update()
     {
@@ -24,25 +23,5 @@ public class SaveController : MonoBehaviour
         gameController.GetDataSaveButton(2);
         // load data 3 for showing data in save panel
         gameController.GetDataSaveButton(3);
-    }
-
-    public void SaveGame(int slot, SaveData data)
-    {
-        PlayerPrefs.SetString(SAVED_GAME + slot, JsonUtility.ToJson(data));
-    }
-
-    public SaveData LoadGame(int slot)
-    {
-        return JsonUtility.FromJson<SaveData>(PlayerPrefs.GetString(SAVED_GAME + slot));
-    }
-
-    public bool IsGameSaved(int slot)
-    {
-        return PlayerPrefs.HasKey(SAVED_GAME + slot);
-    }
-
-    public void ClearSavedGame(int slot)
-    {
-        PlayerPrefs.DeleteKey(SAVED_GAME + slot);
     }
 }

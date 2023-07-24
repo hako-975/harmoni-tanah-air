@@ -41,7 +41,6 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private LoadController loadController;
 
-
     private bool autoplayBool = false;
     
     private bool isAutoplayRunning = false;
@@ -49,6 +48,7 @@ public class GameController : MonoBehaviour
     private List<StoryScene> history = new List<StoryScene>();
 
     private List<StoryScene> storySceneSaveData = new List<StoryScene>();
+
     private GameScene currentSceneSaveData;
 
     private State state = State.IDLE;
@@ -75,7 +75,7 @@ public class GameController : MonoBehaviour
     {
         if (PlayerPrefsController.instance.IsHasSlotSceneLoadGame())
         {
-            SaveData data = saveController.LoadGame(PlayerPrefsController.instance.GetSlotSceneLoadGame());
+            SaveData data = PlayerPrefsController.instance.LoadGame(PlayerPrefsController.instance.GetSlotSceneLoadGame());
             data.prevScenes.ForEach(scene =>
             {
                 history.Add(dataHolder.scenes[scene] as StoryScene);
@@ -133,9 +133,9 @@ public class GameController : MonoBehaviour
 
     public void GetDataSaveButton(int slot)
     {
-        if (saveController.IsGameSaved(slot))
+        if (PlayerPrefsController.instance.IsGameSaved(slot))
         {
-            SaveData data = saveController.LoadGame(slot);
+            SaveData data = PlayerPrefsController.instance.LoadGame(slot);
             data.prevScenes.ForEach(scene =>
             {
                 storySceneSaveData.Add(dataHolder.scenes[scene] as StoryScene);
@@ -171,9 +171,9 @@ public class GameController : MonoBehaviour
 
     public void GetDataLoadButton(int slot)
     {
-        if (saveController.IsGameSaved(slot))
+        if (PlayerPrefsController.instance.IsGameSaved(slot))
         {
-            SaveData data = saveController.LoadGame(slot);
+            SaveData data = PlayerPrefsController.instance.LoadGame(slot);
             data.prevScenes.ForEach(scene =>
             {
                 storySceneSaveData.Add(dataHolder.scenes[scene] as StoryScene);
@@ -209,7 +209,7 @@ public class GameController : MonoBehaviour
 
     private void OnSaveButtonClick(int slot)
     {
-        if (saveController.IsGameSaved(slot))
+        if (PlayerPrefsController.instance.IsGameSaved(slot))
         {
             saveController.confirmSavePanel.SetActive(true);
             saveController.confirmSaveYesButton.onClick.AddListener( delegate { SaveData(slot); });
@@ -242,7 +242,7 @@ public class GameController : MonoBehaviour
             dateSaved = currentDateTime.ToString("dddd, dd MMMM yyyy, HH:mm", new CultureInfo("id-ID"))
         };
 
-        saveController.SaveGame(slot, data);
+        PlayerPrefsController.instance.SaveGame(slot, data);
 
         GetDataSaveButton(slot);
         CloseConfirmSavePanel();
@@ -250,7 +250,7 @@ public class GameController : MonoBehaviour
 
     private void OnLoadButtonClick(int slot)
     {
-        if (saveController.IsGameSaved(slot))
+        if (PlayerPrefsController.instance.IsGameSaved(slot))
         {
             loadController.confirmLoadPanel.SetActive(true);
             loadController.confirmLoadYesButton.onClick.AddListener(delegate { LoadData(slot); });
