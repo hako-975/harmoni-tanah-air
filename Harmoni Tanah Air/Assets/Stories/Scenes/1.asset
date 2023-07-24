@@ -31,7 +31,7 @@ MonoBehaviour:
       actionType: 0
       coords: {x: 0, y: 115}
       moveSpeed: 0
-    music: {fileID: 0}
+    music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
     sound: {fileID: 0}
   - text: Pagi
     speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}

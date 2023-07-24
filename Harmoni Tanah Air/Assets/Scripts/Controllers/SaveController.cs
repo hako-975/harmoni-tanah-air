@@ -14,7 +14,7 @@ public class SaveController : MonoBehaviour
     [SerializeField]
     GameController gameController;
 
-    private static readonly string SAVED_GAME = "SavedGame";
+    public static readonly string SAVED_GAME = "SavedGame";
 
     void Update()
     {

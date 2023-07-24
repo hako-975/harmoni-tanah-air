@@ -16,7 +16,7 @@ MonoBehaviour:
   - text: Hari menjelang sore, waktunya pulang sekolah
     speaker: {fileID: 11400000, guid: 5f41f85557945064aabeed32ef0f8019, type: 2}
     actions: []
-    music: {fileID: 0}
+    music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
     sound: {fileID: 0}
   - text: Selamat sore anak-anak
     speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
@@ -26,9 +26,9 @@ MonoBehaviour:
       actionType: 1
       coords: {x: 0, y: 140}
       moveSpeed: 0
-    music: {fileID: 0}
+    music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
     sound: {fileID: 0}
-  - text: Sore pak
+  - text: Sore bu
     speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
@@ -36,19 +36,14 @@ MonoBehaviour:
       actionType: 2
       coords: {x: 500, y: 140}
       moveSpeed: 2
-    music: {fileID: 0}
+    music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
     sound: {fileID: 0}
-  - text: Sore pak
-    speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
-    actions: []
-    music: {fileID: 0}
-    sound: {fileID: 0}
-  - text: Bapak ada pengumuman penting. Kita akan mengadakan festival budaya untuk
+  - text: Ibu ada pengumuman penting. Kita akan mengadakan festival budaya untuk
       memperingati Hari Kemerdekaan Indonesia. Setiap kelompok harus mempresentasikan
       satu aspek budaya yang berbeda.
     speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
     actions: []
-    music: {fileID: 0}
+    music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
     sound: {fileID: 0}
   - text: Kita harus memilih budaya yang benar-benar mewakili keanekaragaman Indonesia.
     speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
@@ -58,20 +53,20 @@ MonoBehaviour:
       actionType: 1
       coords: {x: 0, y: 140}
       moveSpeed: 0
-    music: {fileID: 0}
+    music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
     sound: {fileID: 0}
-  - text: Kamu benar Rani. Setiap kelompok akan memberikan pertunjukan mereka di
+  - text: Kamu benar Andri. Setiap kelompok akan memberikan pertunjukan mereka di
       depan juri yang terdiri dari para tamu penting. Pemenangnya akan mendapatkan
       penghargaan khusus.
     speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
     actions: []
-    music: {fileID: 0}
+    music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
     sound: {fileID: 0}
   - text: (Berpikir dalam hati) Ini kesempatan besar. Aku harus membuat keputusan
       yang tepat.
     speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
     actions: []
-    music: {fileID: 0}
+    music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
     sound: {fileID: 0}
   background: {fileID: 21300000, guid: c2bbe4307e1904c41bd70e9bc720a54d, type: 3}
   nextScene: {fileID: 11400000, guid: 6272d9438908692489efc08d206291d5, type: 2}

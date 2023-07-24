@@ -94,6 +94,11 @@ public class PlayerPrefsController : MonoBehaviour
         return PlayerPrefs.HasKey("SlotSceneLoadGame");
     }
 
+    public bool IsHasGameSaved()
+    {
+        return PlayerPrefs.HasKey(SaveController.SAVED_GAME + 1) || PlayerPrefs.HasKey(SaveController.SAVED_GAME + 2) || PlayerPrefs.HasKey(SaveController.SAVED_GAME + 3);
+    }
+
     public void DeleteKey(string key)
     {
         PlayerPrefs.DeleteKey(key);

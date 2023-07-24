@@ -12,50 +12,120 @@ public class MenuController : MonoBehaviour
 
     private Animator animator;
 
-    bool window = false;
+    bool windowLoad = false;
+    bool windowSettings = false;
+    bool windowCredit = false;
+    bool windowGaleri = false;
+    bool windowQuit = false;
 
     void Start()
     {
         animator = GetComponent<Animator>();
-        //loadButton.interactable = SaveController.IsGameSaved();
-        loadButton.onClick.AddListener(LoadGameButton);
-
+        loadButton.interactable = PlayerPrefsController.instance.IsHasGameSaved();
         newGameButton.onClick.AddListener(NewGameButton);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && window)
+        if (Input.GetKeyDown(KeyCode.Escape) && (windowLoad || windowSettings || windowCredit || windowGaleri || windowQuit))
         {
-            animator.SetTrigger("Hide");
-            window = false;
+            if (windowLoad)
+            {
+                animator.SetTrigger("HideLoad");
+            }
+            else if (windowSettings)
+            {
+                animator.SetTrigger("HideSettings");
+            }
+            else if (windowCredit)
+            {
+                animator.SetTrigger("HideCredit");
+            }
+            else if (windowGaleri)
+            {
+                animator.SetTrigger("HideGaleri");
+            }
+            else if (windowQuit)
+            {
+                animator.SetTrigger("HideQuit");
+            }
+
+            windowSettings = false;
+            windowLoad = false;
+            windowCredit = false;
+            windowGaleri = false;
+            windowQuit = false;
         }
     }
 
     public void NewGameButton()
     {
-        LoadGameButton();
+        PlayerPrefsController.instance.SetNextScene("Gameplay");
     }
 
-    public void LoadGameButton()
+    public void ShowLoad()
     {
-        PlayerPrefsController.instance.SetNextScene("Gameplay");
+        animator.SetTrigger("ShowLoad");
+        windowLoad = true;
+    }
+
+    public void HideLoad()
+    {
+        animator.SetTrigger("HideLoad");
+        windowLoad = false;
     }
 
     public void ShowSettings()
     {
-        animator.SetTrigger("Show");
-        window = true;
+        animator.SetTrigger("ShowSettings");
+        windowSettings = true;
     }
 
     public void HideSettings()
     {
-        animator.SetTrigger("Hide");
-        window = false;
+        animator.SetTrigger("HideSettings");
+        windowSettings = false;
+    }
+
+    public void ShowCredit()
+    {
+        animator.SetTrigger("ShowCredit");
+        windowCredit = true;
+    }
+
+    public void HideCredit()
+    {
+        animator.SetTrigger("HideCredit");
+        windowCredit = false;
+    }
+
+    public void ShowGaleri()
+    {
+        animator.SetTrigger("ShowGaleri");
+        windowGaleri = true;
+    }
+
+    public void HideGaleri()
+    {
+        animator.SetTrigger("HideGaleri");
+        windowGaleri = false;
+    }
+
+    public void ShowQuit()
+    {
+        animator.SetTrigger("ShowQuit");
+        windowQuit = true;
+    }
+
+    public void HideQuit()
+    {
+        animator.SetTrigger("HideQuit");
+        windowQuit = false;
     }
 
     public void QuitButton()
     {
+        Debug.Log("Keluar");
         Application.Quit();
     }
 }
