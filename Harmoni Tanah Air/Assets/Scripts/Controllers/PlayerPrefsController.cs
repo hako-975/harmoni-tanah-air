@@ -13,29 +13,29 @@ public class PlayerPrefsController : MonoBehaviour
         instance = this;
     }
     #endregion
-    
+
+    private static readonly string SAVED_GAME = "SavedGame";
+
     [SerializeField]
     private AudioMixer musicMixer;
     [SerializeField]
     private AudioMixer soundMixer;
 
-    public static readonly string SAVED_GAME = "SavedGame";
-    
     void Start()
     {
         // load settings configuration on start
         musicMixer.SetFloat("volume", -50 + GetMusicVolume() / 2);
         soundMixer.SetFloat("volume", -50 + GetSoundVolume() / 2);
     }
+    
+    public SaveData LoadGame(int slot)
+    {
+        return JsonUtility.FromJson<SaveData>(PlayerPrefs.GetString(SAVED_GAME + slot));
+    }
 
     public void SaveGame(int slot, SaveData data)
     {
         PlayerPrefs.SetString(SAVED_GAME + slot, JsonUtility.ToJson(data));
-    }
-
-    public SaveData LoadGame(int slot)
-    {
-        return JsonUtility.FromJson<SaveData>(PlayerPrefs.GetString(SAVED_GAME + slot));
     }
 
     public bool IsGameSaved(int slot)
@@ -46,6 +46,11 @@ public class PlayerPrefsController : MonoBehaviour
     public void ClearSavedGame(int slot)
     {
         PlayerPrefs.DeleteKey(SAVED_GAME + slot);
+    }
+
+    public bool IsHasGameSaved()
+    {
+        return PlayerPrefs.HasKey(SAVED_GAME + 1) || PlayerPrefs.HasKey(SAVED_GAME + 2) || PlayerPrefs.HasKey(SAVED_GAME + 3);
     }
 
     public string GetNextScene()
@@ -116,11 +121,7 @@ public class PlayerPrefsController : MonoBehaviour
         return PlayerPrefs.HasKey("SlotSceneLoadGame");
     }
 
-    public bool IsHasGameSaved()
-    {
-        return PlayerPrefs.HasKey(SAVED_GAME + 1) || PlayerPrefs.HasKey(SAVED_GAME + 2) || PlayerPrefs.HasKey(SAVED_GAME + 3);
-    }
-
+    
     public void DeleteKey(string key)
     {
         PlayerPrefs.DeleteKey(key);

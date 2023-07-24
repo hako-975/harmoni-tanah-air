@@ -14,7 +14,6 @@ public class SaveController : MonoBehaviour
     [SerializeField]
     GameController gameController;
 
-
     void Update()
     {
         // load data 1 for showing data in save panel
