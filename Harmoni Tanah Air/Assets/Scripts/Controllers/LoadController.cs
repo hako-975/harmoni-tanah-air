@@ -14,7 +14,7 @@ public class LoadController : MonoBehaviour
     [SerializeField]
     GameController gameController;
 
-    void Update()
+    void OnEnable()
     {
         // load data 1 for showing data in load panel
         gameController.GetDataLoadButton(1);

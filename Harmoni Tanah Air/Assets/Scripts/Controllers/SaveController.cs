@@ -15,7 +15,7 @@ public class SaveController : MonoBehaviour
     GameController gameController;
 
 
-    void Update()
+    void OnEnable()
     {
         // load data 1 for showing data in save panel
         gameController.GetDataSaveButton(1);
