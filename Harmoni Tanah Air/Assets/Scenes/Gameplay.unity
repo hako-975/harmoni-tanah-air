@@ -2424,6 +2424,7 @@ GameObject:
   - component: {fileID: 356475662}
   - component: {fileID: 356475664}
   - component: {fileID: 356475663}
+  - component: {fileID: 356475665}
   m_Layer: 5
   m_Name: History Panel
   m_TagString: Untagged
@@ -2490,6 +2491,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356475661}
   m_CullTransparentMesh: 1
+--- !u!114 &356475665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356475661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59d26e75236c5834a885dec53c3a2e3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  historyDialogBarPrefab: {fileID: 984733730724454588, guid: 7a221f43b6e392f4193d7440610ece96, type: 3}
+  contentHistory: {fileID: 1366718508}
+  gameController: {fileID: 1507951331}
 --- !u!1 &363693794
 GameObject:
   m_ObjectHideFlags: 0
@@ -9183,7 +9199,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 665287535}
   m_HandleRect: {fileID: 665287534}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -10647,7 +10663,7 @@ GameObject:
   - component: {fileID: 1366718511}
   - component: {fileID: 1366718510}
   m_Layer: 5
-  m_Name: Content
+  m_Name: Content History
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11685,6 +11701,7 @@ MonoBehaviour:
   pauseController: {fileID: 116519747}
   saveController: {fileID: 734951589}
   loadController: {fileID: 1116578168}
+  history: []
 --- !u!1 &1523247230
 GameObject:
   m_ObjectHideFlags: 0

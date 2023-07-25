@@ -11,8 +11,7 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private GameScene currentScene;
 
-    [SerializeField]
-    private DialogBarController dialogBar;
+    public DialogBarController dialogBar;
 
     [SerializeField]
     private SpriteSwitcherController spriteSwitcherController;
@@ -45,9 +44,10 @@ public class GameController : MonoBehaviour
     
     private bool isAutoplayRunning = false;
 
-    private List<StoryScene> history = new List<StoryScene>();
+    [HideInInspector]
+    public List<StoryScene> history = new List<StoryScene>();
 
-    private List<StoryScene> storySceneSaveData = new List<StoryScene>();
+    private readonly List<StoryScene> storySceneSaveData = new List<StoryScene>();
 
     private GameScene currentSceneSaveData;
 
