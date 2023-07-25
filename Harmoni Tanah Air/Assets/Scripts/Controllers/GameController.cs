@@ -8,8 +8,7 @@ using System.Globalization;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField]
-    private GameScene currentScene;
+    public GameScene currentScene;
 
     public DialogBarController dialogBar;
 
@@ -264,7 +263,6 @@ public class GameController : MonoBehaviour
         PlayerPrefsController.instance.SetNextScene("Gameplay");
     }
 
-
     private void CloseConfirmLoadPanel()
     {
         loadController.confirmLoadPanel.SetActive(false);
@@ -291,6 +289,7 @@ public class GameController : MonoBehaviour
                 dialogBar.StopTyping();
                 if (dialogBar.IsLastSentence())
                 {
+                    dialogBar.SetSentenceIndex(-1);
                     PlayScene((currentScene as StoryScene).nextScene);
                 }
                 else

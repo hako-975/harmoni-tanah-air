@@ -19,45 +19,43 @@ public class HistoryController : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-
         foreach (StoryScene scene in gameController.history)
         {
-            List<StoryScene.Sentence> sentencesForHistory = new List<StoryScene.Sentence>();
-
-            int maxIndex = Mathf.Min(scene.sentences.Count, gameController.dialogBar.GetSentenceIndex() + 1);
+            int maxIndex;
+            if (scene == gameController.currentScene)
+            {
+                maxIndex = Mathf.Min(scene.sentences.Count, gameController.dialogBar.GetSentenceIndex() + 1);
+            }
+            else
+            {
+                maxIndex = scene.sentences.Count;
+            }
 
             for (int i = 0; i < maxIndex; i++)
             {
-                sentencesForHistory.Add(scene.sentences[i]);
-            }
+                StoryScene.Sentence sentence = scene.sentences[i];
 
-            foreach (StoryScene.Sentence sentence in sentencesForHistory)
-            {
-                if (scene.sentences != sentencesForHistory)
+                Speaker speaker = sentence.speaker;
+                string speakerName = speaker.speakerName;
+                Color speakerColor = speaker.textColor;
+
+                GameObject historyDialogBar = Instantiate(historyDialogBarPrefab, Vector3.zero, Quaternion.identity, contentHistory.transform);
+                var textbox = historyDialogBar.GetComponent<HistoryDialogBarController>().textBoxText;
+                textbox.text = sentence.text;
+
+                var namebox = historyDialogBar.GetComponent<HistoryDialogBarController>();
+
+                if (speakerName != "Narrator")
                 {
-                    Speaker speaker = sentence.speaker;
-                    string speakerName = speaker.speakerName;
-                    Color speakerColor = speaker.textColor;
-
-                    GameObject historyDialogBar = Instantiate(historyDialogBarPrefab, Vector3.zero, Quaternion.identity, contentHistory.transform);
-                    var textbox = historyDialogBar.GetComponent<HistoryDialogBarController>().textBoxText;
-                    textbox.text = sentence.text;
-
-                    var namebox = historyDialogBar.GetComponent<HistoryDialogBarController>();
-
-                    if (speakerName != "Narrator")
-                    {
-                        namebox.nameBoxUI.SetActive(true);
-                        namebox.nameBoxText.text = speakerName;
-                        namebox.nameBoxText.color = speakerColor;
-                    }
-                    else
-                    {
-                        namebox.nameBoxUI.SetActive(false);
-                    }
+                    namebox.nameBoxUI.SetActive(true);
+                    namebox.nameBoxText.text = speakerName;
+                    namebox.nameBoxText.color = speakerColor;
+                }
+                else
+                {
+                    namebox.nameBoxUI.SetActive(false);
                 }
             }
         }
-
     }
 }
