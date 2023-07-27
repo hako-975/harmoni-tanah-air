@@ -68,5 +68,4 @@ public class SpriteSwitcherController : MonoBehaviour
             return image2.sprite;
         }
     }
-
 }

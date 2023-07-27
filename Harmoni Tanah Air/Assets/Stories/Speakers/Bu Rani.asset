@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Bu Rani
   textColor: {r: 1, g: 1, b: 1, a: 1}
-  sprites: []
-  prefab: {fileID: 0}
+  sprites:
+  - {fileID: 21300000, guid: 867da5c9e3a9e4a42a4431d719657a0a, type: 3}
+  - {fileID: 21300000, guid: 6ae69c750cc0ce04d94318cdfbf3b527, type: 3}
+  - {fileID: 21300000, guid: b65ceed04145a3540bc268f20491822f, type: 3}
+  prefab: {fileID: 1009273316917457023, guid: e443a1ecf35f9c4409a88b2d9c2a5a00, type: 3}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af58f2bfae6afb74494969c45712243d, type: 3}
+  m_Name: Bu Rani Unknown
+  m_EditorClassIdentifier: 
+  speakerName: ???
+  textColor: {r: 1, g: 1, b: 1, a: 1}
+  sprites:
+  - {fileID: 21300000, guid: 867da5c9e3a9e4a42a4431d719657a0a, type: 3}
+  - {fileID: 21300000, guid: 6ae69c750cc0ce04d94318cdfbf3b527, type: 3}
+  - {fileID: 21300000, guid: b65ceed04145a3540bc268f20491822f, type: 3}
+  prefab: {fileID: 1009273316917457023, guid: e443a1ecf35f9c4409a88b2d9c2a5a00, type: 3}

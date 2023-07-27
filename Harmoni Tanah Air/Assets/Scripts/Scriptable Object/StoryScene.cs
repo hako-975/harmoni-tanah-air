@@ -18,6 +18,7 @@ public class StoryScene : GameScene
         public List<Action> actions;
         public AudioClip music;
         public AudioClip sound;
+        public bool soundLoop;
 
         [System.Serializable]
         public struct Action

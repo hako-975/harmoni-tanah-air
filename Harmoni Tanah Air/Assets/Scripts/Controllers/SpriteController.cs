@@ -22,6 +22,7 @@ public class SpriteController : MonoBehaviour
     public void Setup(Sprite sprite)
     {
         switcher.SetImage(sprite);
+        switcher.SyncImages();
     }
 
     public void Show(Vector2 coords, bool isAnimated = true)

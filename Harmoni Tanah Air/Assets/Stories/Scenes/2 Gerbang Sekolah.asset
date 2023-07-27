@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33238ce789405164dbd6cd2d8669ca9a, type: 3}
+  m_Name: 2 Gerbang Sekolah
+  m_EditorClassIdentifier: 
+  sentences:
+  - text: Sesampai di sekolah...
+    speaker: {fileID: 11400000, guid: 5f41f85557945064aabeed32ef0f8019, type: 2}
+    actions: []
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Fuihh untung belum ditutup gerbangnya
+    speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
+      spriteIndex: 2
+      actionType: 1
+      coords: {x: 500, y: 0}
+      moveSpeed: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: (Dia pun berlari)
+    speaker: {fileID: 11400000, guid: 5f41f85557945064aabeed32ef0f8019, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
+      spriteIndex: 2
+      actionType: 2
+      coords: {x: -500, y: 0}
+      moveSpeed: 3
+    - speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
+      spriteIndex: 2
+      actionType: 3
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 8300000, guid: 81fae3d7b961793458e820cf1f2a2fa3, type: 3}
+    soundLoop: 0
+  - text: (Kring Kring Kring)
+    speaker: {fileID: 11400000, guid: 5f41f85557945064aabeed32ef0f8019, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 8300000, guid: 9840939045455ba4883283fc91d57607, type: 3}
+    soundLoop: 0
+  background: {fileID: 21300000, guid: 1068f958a3dbc724d88030288a76adb6, type: 3}
+  nextScene: {fileID: 11400000, guid: 876374e8a2193484cb4b92e9ea7799fa, type: 2}

@@ -14,5 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Ayu
   textColor: {r: 1, g: 0.94230855, b: 0, a: 1}
-  sprites: []
-  prefab: {fileID: 0}
+  sprites:
+  - {fileID: 21300000, guid: fe4d34053d4405d4fa72e0a54af4e3a4, type: 3}
+  - {fileID: 21300000, guid: d12f1adefefa28444a06dbcd74202359, type: 3}
+  - {fileID: 21300000, guid: 183cc2d9809ea8e418a369b65e44df2e, type: 3}
+  - {fileID: 21300000, guid: 4ba204903076f824180f810c2b79a58a, type: 3}
+  - {fileID: 21300000, guid: 33d0a86aebc88034097b89cf7c6bf99b, type: 3}
+  prefab: {fileID: 1009273316917457023, guid: e443a1ecf35f9c4409a88b2d9c2a5a00, type: 3}

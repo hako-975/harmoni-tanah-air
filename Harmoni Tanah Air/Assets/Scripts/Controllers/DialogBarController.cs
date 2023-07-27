@@ -193,8 +193,11 @@ public class DialogBarController : MonoBehaviour
         }
     }
 
-    private void ActSpeaker(StoryScene.Sentence.Action action, bool isAnimated = true)
+    private bool ActSpeaker(StoryScene.Sentence.Action action, bool isAnimated = true)
     {
+        // timpa coords y
+        action.coords.y = 165;
+
         SpriteController controller;
 
         if (!sprites.ContainsKey(action.speaker))
@@ -207,13 +210,12 @@ public class DialogBarController : MonoBehaviour
             controller = sprites[action.speaker];
         }
 
-
         switch (action.actionType)
         {
             case StoryScene.Sentence.Action.Type.APPEAR:
                 controller.Setup(action.speaker.sprites[action.spriteIndex]);
                 controller.Show(action.coords, isAnimated);
-                return;
+                return true;
             case StoryScene.Sentence.Action.Type.MOVE:
                 controller.Move(action.coords, action.moveSpeed, isAnimated);
                 break;
@@ -221,6 +223,8 @@ public class DialogBarController : MonoBehaviour
                 controller.Hide(isAnimated);
                 break;
         }
+
         controller.SwitchSprite(action.speaker.sprites[action.spriteIndex], isAnimated);
+        return true;
     }
 }

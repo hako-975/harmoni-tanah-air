@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af58f2bfae6afb74494969c45712243d, type: 3}
+  m_Name: QR Code
+  m_EditorClassIdentifier: 
+  speakerName: QR Code
+  textColor: {r: 0, g: 0, b: 0, a: 1}
+  sprites:
+  - {fileID: 21300000, guid: d6a88add282148b4f8a4af67c6567c09, type: 3}
+  prefab: {fileID: 1009273316917457023, guid: e443a1ecf35f9c4409a88b2d9c2a5a00, type: 3}

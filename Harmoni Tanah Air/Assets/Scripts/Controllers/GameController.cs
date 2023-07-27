@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour
 
     [SerializeField]
     private Button autoplayButton;
-    
+
     [SerializeField]
     private Button pauseButton;
 
@@ -35,12 +35,12 @@ public class GameController : MonoBehaviour
 
     [SerializeField]
     private SaveController saveController;
-    
+
     [SerializeField]
     private LoadController loadController;
 
     private bool autoplayBool = false;
-    
+
     private bool isAutoplayRunning = false;
 
     [HideInInspector]
@@ -62,7 +62,7 @@ public class GameController : MonoBehaviour
     private void Awake()
     {
         GameObject[] musicObj = GameObject.FindGameObjectsWithTag("MusicController");
-        
+
         foreach (GameObject music in musicObj)
         {
             Destroy(music);
@@ -211,7 +211,7 @@ public class GameController : MonoBehaviour
         if (PlayerPrefsController.instance.IsGameSaved(slot))
         {
             saveController.confirmSavePanel.SetActive(true);
-            saveController.confirmSaveYesButton.onClick.AddListener( delegate { SaveData(slot); });
+            saveController.confirmSaveYesButton.onClick.AddListener(delegate { SaveData(slot); });
             saveController.confirmSaveNoButton.onClick.AddListener(CloseConfirmSavePanel);
         }
         else
@@ -348,7 +348,7 @@ public class GameController : MonoBehaviour
             dialogBar.Hide();
             yield return new WaitForSeconds(1f);
         }
-        
+
         if (scene is StoryScene)
         {
             StoryScene storyScene = scene as StoryScene;
@@ -379,6 +379,6 @@ public class GameController : MonoBehaviour
 
     private void PlayAudio(StoryScene.Sentence sentence)
     {
-        audioController.PlayAudio(sentence.music, sentence.sound);
+        audioController.PlayAudio(sentence.music, sentence.sound, sentence.soundLoop);
     }
 }

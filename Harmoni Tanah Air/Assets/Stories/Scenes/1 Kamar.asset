@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33238ce789405164dbd6cd2d8669ca9a, type: 3}
+  m_Name: 1 Kamar
+  m_EditorClassIdentifier: 
+  sentences:
+  - text: Pada hari Senin, sinar matahari cerah menyapa gadis SMA yang sedang tertidur
+    speaker: {fileID: 11400000, guid: 5f41f85557945064aabeed32ef0f8019, type: 2}
+    actions: []
+    music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Pukul 6 pagi alarm berbunyi
+    speaker: {fileID: 11400000, guid: 5f41f85557945064aabeed32ef0f8019, type: 2}
+    actions: []
+    music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
+    sound: {fileID: 8300000, guid: ecf142dfeae8cf14fbf62e529f389154, type: 3}
+    soundLoop: 1
+  - text: hmmmm...
+    speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: "(Melihat kalender) \nAsikk hari ini udah masuk sekolah"
+    speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
+      spriteIndex: 1
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Dia pun siap-siap untuk berangkat ke sekolah
+    speaker: {fileID: 11400000, guid: 5f41f85557945064aabeed32ef0f8019, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
+      spriteIndex: 1
+      actionType: 2
+      coords: {x: -500, y: 0}
+      moveSpeed: 2
+    - speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
+      spriteIndex: 1
+      actionType: 3
+      coords: {x: 0, y: 0}
+      moveSpeed: 2
+    music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: (Sedang mandi)
+    speaker: {fileID: 11400000, guid: 5f41f85557945064aabeed32ef0f8019, type: 2}
+    actions: []
+    music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
+    sound: {fileID: 8300000, guid: 4206e29c73c70754eab08ef6fb4a4fb8, type: 3}
+    soundLoop: 1
+  - text: Sipp udah cantik, waktunya berangkat sekolah
+    speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
+      spriteIndex: 2
+      actionType: 1
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: (Dia pun pergi ke sekolah)
+    speaker: {fileID: 11400000, guid: 5f41f85557945064aabeed32ef0f8019, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
+      spriteIndex: 2
+      actionType: 2
+      coords: {x: 500, y: 0}
+      moveSpeed: 2
+    - speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
+      spriteIndex: 2
+      actionType: 3
+      coords: {x: 500, y: 0}
+      moveSpeed: 2
+    music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
+    sound: {fileID: 8300000, guid: 81fae3d7b961793458e820cf1f2a2fa3, type: 3}
+    soundLoop: 0
+  background: {fileID: 21300000, guid: 0788f14d1a1684d4fa3a24cae9844dd2, type: 3}
+  nextScene: {fileID: 11400000, guid: 7abd9eb8fa25a024395b1cd10b6a2c2b, type: 2}

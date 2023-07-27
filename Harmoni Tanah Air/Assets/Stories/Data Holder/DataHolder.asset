@@ -15,7 +15,5 @@ MonoBehaviour:
   scenes:
   - {fileID: 11400000, guid: 93d9fef67a1ed6748ae768349f13b2dd, type: 2}
   - {fileID: 11400000, guid: 7abd9eb8fa25a024395b1cd10b6a2c2b, type: 2}
-  - {fileID: 11400000, guid: ec52cfbc04377a74aaa33ae67748b624, type: 2}
-  - {fileID: 11400000, guid: 140cb04f98e9f5e44b9d0c5d2b6b53fa, type: 2}
-  - {fileID: 11400000, guid: 6c4956bef27369a45956225340480165, type: 2}
-  - {fileID: 11400000, guid: 9aaac55409c6c054ba6dcf1587760314, type: 2}
+  - {fileID: 11400000, guid: 876374e8a2193484cb4b92e9ea7799fa, type: 2}
+  - {fileID: 11400000, guid: 73bdee0d26dde244aa6ad45dc832e059, type: 2}
