@@ -193,7 +193,7 @@ public class DialogBarController : MonoBehaviour
         }
     }
 
-    private bool ActSpeaker(StoryScene.Sentence.Action action, bool isAnimated = true)
+    private void ActSpeaker(StoryScene.Sentence.Action action, bool isAnimated = true)
     {
         // timpa coords y
         action.coords.y = 165;
@@ -215,16 +215,17 @@ public class DialogBarController : MonoBehaviour
             case StoryScene.Sentence.Action.Type.APPEAR:
                 controller.Setup(action.speaker.sprites[action.spriteIndex]);
                 controller.Show(action.coords, isAnimated);
-                return true;
+                return;
             case StoryScene.Sentence.Action.Type.MOVE:
-                controller.Move(action.coords, action.moveSpeed, isAnimated);
-                break;
+                controller.Move(action.coords, action.speedOrDuration, isAnimated);
+                return;
             case StoryScene.Sentence.Action.Type.DISAPPEAR:
-                controller.Hide(isAnimated);
-                break;
+                controller.Hide(action.speedOrDuration, isAnimated);
+                return;
+            case StoryScene.Sentence.Action.Type.NONE:
+                controller.SwitchSprite(action.speaker.sprites[action.spriteIndex], isAnimated);
+                return;
         }
 
-        controller.SwitchSprite(action.speaker.sprites[action.spriteIndex], isAnimated);
-        return true;
     }
 }

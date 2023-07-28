@@ -21,7 +21,7 @@ MonoBehaviour:
       spriteIndex: 0
       actionType: 1
       coords: {x: 0, y: 0}
-      moveSpeed: 0
+      speedOrDuration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 8300000, guid: a362f7ed23a683741a635fa831e25065, type: 3}
     soundLoop: 1
@@ -29,10 +29,15 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 5f41f85557945064aabeed32ef0f8019, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
-      spriteIndex: 0
+      spriteIndex: 2
+      actionType: 2
+      coords: {x: -500, y: 0}
+      speedOrDuration: 0
+    - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
+      spriteIndex: 2
       actionType: 3
       coords: {x: 0, y: 0}
-      moveSpeed: 0
+      speedOrDuration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -56,7 +61,7 @@ MonoBehaviour:
       spriteIndex: 0
       actionType: 1
       coords: {x: 0, y: 0}
-      moveSpeed: 0
+      speedOrDuration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -65,15 +70,15 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
-      spriteIndex: 0
-      actionType: 0
-      coords: {x: 0, y: 0}
-      moveSpeed: 0
-    - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
       spriteIndex: 1
       actionType: 0
       coords: {x: 0, y: 0}
-      moveSpeed: 0
+      speedOrDuration: 0
+    - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: 0, y: 0}
+      speedOrDuration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -82,15 +87,15 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
-      spriteIndex: 0
-      actionType: 0
-      coords: {x: 0, y: 0}
-      moveSpeed: 0
-    - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
       spriteIndex: 1
       actionType: 0
       coords: {x: 0, y: 0}
-      moveSpeed: 0
+      speedOrDuration: 0
+    - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: 0, y: 0}
+      speedOrDuration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -98,15 +103,15 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
-      spriteIndex: 0
-      actionType: 0
-      coords: {x: 0, y: 0}
-      moveSpeed: 0
-    - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
       spriteIndex: 1
       actionType: 0
       coords: {x: 0, y: 0}
-      moveSpeed: 0
+      speedOrDuration: 0
+    - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: 0, y: 0}
+      speedOrDuration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -115,15 +120,15 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
-      spriteIndex: 0
-      actionType: 0
-      coords: {x: 0, y: 0}
-      moveSpeed: 0
-    - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
       spriteIndex: 1
       actionType: 0
       coords: {x: 0, y: 0}
-      moveSpeed: 0
+      speedOrDuration: 0
+    - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: 0, y: 0}
+      speedOrDuration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -133,15 +138,15 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
-      spriteIndex: 0
-      actionType: 0
-      coords: {x: 0, y: 0}
-      moveSpeed: 0
-    - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
       spriteIndex: 1
       actionType: 0
       coords: {x: 0, y: 0}
-      moveSpeed: 0
+      speedOrDuration: 0
+    - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: 0, y: 0}
+      speedOrDuration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -149,20 +154,20 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
-      spriteIndex: 0
-      actionType: 0
-      coords: {x: 0, y: 0}
-      moveSpeed: 0
-    - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
       spriteIndex: 1
       actionType: 0
       coords: {x: 0, y: 0}
-      moveSpeed: 0
+      speedOrDuration: 0
+    - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: 0, y: 0}
+      speedOrDuration: 0
     - speaker: {fileID: 11400000, guid: 428f2e40b95f4d141b42366ee3b22d82, type: 2}
       spriteIndex: 0
       actionType: 1
       coords: {x: 500, y: 0}
-      moveSpeed: 0
+      speedOrDuration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -170,20 +175,20 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
-      spriteIndex: 0
-      actionType: 0
-      coords: {x: 0, y: 0}
-      moveSpeed: 0
-    - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
       spriteIndex: 1
       actionType: 0
       coords: {x: 0, y: 0}
-      moveSpeed: 0
+      speedOrDuration: 0
+    - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: 0, y: 0}
+      speedOrDuration: 0
     - speaker: {fileID: 11400000, guid: 428f2e40b95f4d141b42366ee3b22d82, type: 2}
       spriteIndex: 0
       actionType: 3
       coords: {x: 0, y: 0}
-      moveSpeed: 0
+      speedOrDuration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -191,20 +196,20 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
-      spriteIndex: 0
-      actionType: 0
-      coords: {x: 0, y: 0}
-      moveSpeed: 0
-    - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
       spriteIndex: 1
       actionType: 0
       coords: {x: 0, y: 0}
-      moveSpeed: 0
+      speedOrDuration: 0
+    - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: 0, y: 0}
+      speedOrDuration: 0
     - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
       spriteIndex: 2
       actionType: 0
       coords: {x: 0, y: 0}
-      moveSpeed: 0
+      speedOrDuration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -215,12 +220,12 @@ MonoBehaviour:
       spriteIndex: 2
       actionType: 2
       coords: {x: -500, y: 0}
-      moveSpeed: 2
+      speedOrDuration: 0
     - speaker: {fileID: 11400000, guid: 1d5a155dd146b8742a8e2237af9aeed7, type: 2}
       spriteIndex: 2
       actionType: 3
       coords: {x: -500, y: 0}
-      moveSpeed: 2
+      speedOrDuration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -231,7 +236,7 @@ MonoBehaviour:
       spriteIndex: 2
       actionType: 1
       coords: {x: -500, y: 0}
-      moveSpeed: 0
+      speedOrDuration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -242,7 +247,7 @@ MonoBehaviour:
       spriteIndex: 1
       actionType: 1
       coords: {x: 0, y: 0}
-      moveSpeed: 0
+      speedOrDuration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -253,12 +258,12 @@ MonoBehaviour:
       spriteIndex: 2
       actionType: 3
       coords: {x: -500, y: 0}
-      moveSpeed: 0
+      speedOrDuration: 0
     - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
       spriteIndex: 3
       actionType: 1
       coords: {x: -500, y: 0}
-      moveSpeed: 0
+      speedOrDuration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -269,13 +274,39 @@ MonoBehaviour:
       spriteIndex: 3
       actionType: 0
       coords: {x: 0, y: 0}
-      moveSpeed: 0
+      speedOrDuration: 0
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      spriteIndex: 2
+      actionType: 0
+      coords: {x: 0, y: 0}
+      speedOrDuration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Asikk!!!
+    speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      spriteIndex: 6
+      actionType: 0
+      coords: {x: 0, y: 0}
+      speedOrDuration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
   - text: (Kring Kring Kring)
     speaker: {fileID: 11400000, guid: 5f41f85557945064aabeed32ef0f8019, type: 2}
-    actions: []
+    actions:
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      spriteIndex: 2
+      actionType: 0
+      coords: {x: 0, y: 0}
+      speedOrDuration: 0
+    - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+      spriteIndex: 5
+      actionType: 0
+      coords: {x: 0, y: 0}
+      speedOrDuration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 8300000, guid: 9840939045455ba4883283fc91d57607, type: 3}
     soundLoop: 0
@@ -286,7 +317,7 @@ MonoBehaviour:
       spriteIndex: 4
       actionType: 0
       coords: {x: 0, y: 0}
-      moveSpeed: 0
+      speedOrDuration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -296,31 +327,30 @@ MonoBehaviour:
     - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
       spriteIndex: 2
       actionType: 2
-      coords: {x: 0, y: 0}
-      moveSpeed: 1
+      coords: {x: 500, y: 0}
+      speedOrDuration: 2
     - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
-      spriteIndex: 1
+      spriteIndex: 5
+      actionType: 0
+      coords: {x: 0, y: 0}
+      speedOrDuration: 0
+    - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+      spriteIndex: 5
       actionType: 2
       coords: {x: 500, y: 0}
-      moveSpeed: 1
-    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
-    sound: {fileID: 0}
-    soundLoop: 0
-  - text: Mereka berdua pun kembali ke kelas bersama
-    speaker: {fileID: 11400000, guid: 5f41f85557945064aabeed32ef0f8019, type: 2}
-    actions:
+      speedOrDuration: 2
+    - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+      spriteIndex: 5
+      actionType: 3
+      coords: {x: 500, y: 0}
+      speedOrDuration: 0.5
     - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
       spriteIndex: 2
       actionType: 3
-      coords: {x: 0, y: 0}
-      moveSpeed: 1
-    - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
-      spriteIndex: 1
-      actionType: 3
       coords: {x: 500, y: 0}
-      moveSpeed: 1
+      speedOrDuration: 1
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
-    sound: {fileID: 0}
+    sound: {fileID: 8300000, guid: 81fae3d7b961793458e820cf1f2a2fa3, type: 3}
     soundLoop: 0
   background: {fileID: 21300000, guid: 467fe071cf9c803408cc98e81d9dbf6c, type: 3}
   nextScene: {fileID: 11400000, guid: 73bdee0d26dde244aa6ad45dc832e059, type: 2}

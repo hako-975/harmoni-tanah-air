@@ -40,13 +40,11 @@ public class SpriteController : MonoBehaviour
         rect.localPosition = coords;
     }
 
-    public void Hide(bool isAnimated = true)
+    public void Hide(float duration, bool isAnimated = true)
     {
         if (isAnimated)
         {
-            animator.enabled = true;
-            switcher.SyncImages();
-            animator.SetTrigger("Hide");
+            StartCoroutine(HideCoroutine(duration));
         }
         else
         {
@@ -55,8 +53,17 @@ public class SpriteController : MonoBehaviour
         }
     }
 
+    private IEnumerator HideCoroutine(float duration)
+    {
+        animator.enabled = true;
+        switcher.SyncImages();
+        yield return new WaitForSeconds(duration);
+        animator.SetTrigger("Hide");
+    }
+
     public void Move(Vector2 coords, float speed, bool isAnimated = true)
     {
+        switcher.SyncImages();
         if (isAnimated)
         {
             StartCoroutine(MoveCoroutine(coords, speed));

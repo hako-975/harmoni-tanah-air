@@ -27,7 +27,7 @@ public class StoryScene : GameScene
             public int spriteIndex;
             public Type actionType;
             public Vector2 coords;
-            public float moveSpeed;
+            public float speedOrDuration;
 
             [System.Serializable]
             public enum Type

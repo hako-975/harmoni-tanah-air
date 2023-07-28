@@ -15,13 +15,38 @@ MonoBehaviour:
   sentences:
   - text: Dewi dan Ayu pun berjalan menuju kelas
     speaker: {fileID: 11400000, guid: 5f41f85557945064aabeed32ef0f8019, type: 2}
-    actions: []
+    actions:
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      spriteIndex: 2
+      actionType: 1
+      coords: {x: 500, y: 0}
+      speedOrDuration: 0
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      spriteIndex: 2
+      actionType: 2
+      coords: {x: -250, y: 0}
+      speedOrDuration: 1.5
+    - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+      spriteIndex: 5
+      actionType: 1
+      coords: {x: 500, y: 0}
+      speedOrDuration: 0
+    - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+      spriteIndex: 5
+      actionType: 2
+      coords: {x: 250, y: 0}
+      speedOrDuration: 0.5
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
   - text: Saat di lorong Dewi menatap wajah seseorang yang tidak asing
     speaker: {fileID: 11400000, guid: 5f41f85557945064aabeed32ef0f8019, type: 2}
-    actions: []
+    actions:
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      spriteIndex: 5
+      actionType: 0
+      coords: {x: 0, y: 0}
+      speedOrDuration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -32,7 +57,90 @@ MonoBehaviour:
       spriteIndex: 0
       actionType: 0
       coords: {x: 0, y: 0}
-      moveSpeed: 0
+      speedOrDuration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Kayaknya aku kenal sama orang itu deh
+    speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+    actions: []
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Dia bukannya anak kelas sebelah?
+    speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+    actions: []
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Ah, aku kenal dia, dia temen aku waktu SMP
+    speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      spriteIndex: 4
+      actionType: 0
+      coords: {x: 0, y: 0}
+      speedOrDuration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Andri!!
+    speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      spriteIndex: 3
+      actionType: 0
+      coords: {x: 0, y: 0}
+      speedOrDuration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Halo Dewi, lama tak jumpa, apa kabar?
+    speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: -500, y: 0}
+      speedOrDuration: 0
+    - speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: -500, y: 0}
+      speedOrDuration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Kabar baik
+    speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      spriteIndex: 6
+      actionType: 0
+      coords: {x: 0, y: 0}
+      speedOrDuration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Engga nyangka kalo kita satu sekolah padahal udah semester 2 hehe
+    speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      spriteIndex: 2
+      actionType: 0
+      coords: {x: 0, y: 0}
+      speedOrDuration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Iya, aku juga baru sadar hehe
+    speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+      spriteIndex: 1
+      actionType: 0
+      coords: {x: 0, y: 0}
+      speedOrDuration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0

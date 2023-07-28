@@ -26,7 +26,7 @@ MonoBehaviour:
       spriteIndex: 2
       actionType: 1
       coords: {x: 500, y: 0}
-      moveSpeed: 0
+      speedOrDuration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -37,19 +37,19 @@ MonoBehaviour:
       spriteIndex: 2
       actionType: 2
       coords: {x: -500, y: 0}
-      moveSpeed: 3
+      speedOrDuration: 3
     - speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
-      spriteIndex: 2
+      spriteIndex: 1
       actionType: 3
       coords: {x: 0, y: 0}
-      moveSpeed: 0
+      speedOrDuration: 1
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 8300000, guid: 81fae3d7b961793458e820cf1f2a2fa3, type: 3}
     soundLoop: 0
   - text: (Kring Kring Kring)
     speaker: {fileID: 11400000, guid: 5f41f85557945064aabeed32ef0f8019, type: 2}
     actions: []
-    music: {fileID: 0}
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 8300000, guid: 9840939045455ba4883283fc91d57607, type: 3}
     soundLoop: 0
   background: {fileID: 21300000, guid: 1068f958a3dbc724d88030288a76adb6, type: 3}

@@ -32,7 +32,7 @@ MonoBehaviour:
       spriteIndex: 0
       actionType: 1
       coords: {x: 0, y: 0}
-      moveSpeed: 0
+      speedOrDuration: 0
     music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -43,7 +43,7 @@ MonoBehaviour:
       spriteIndex: 1
       actionType: 0
       coords: {x: 0, y: 0}
-      moveSpeed: 0
+      speedOrDuration: 0
     music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -51,15 +51,15 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 5f41f85557945064aabeed32ef0f8019, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
-      spriteIndex: 1
+      spriteIndex: 3
       actionType: 2
       coords: {x: -500, y: 0}
-      moveSpeed: 2
+      speedOrDuration: 2
     - speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
-      spriteIndex: 1
+      spriteIndex: 3
       actionType: 3
       coords: {x: 0, y: 0}
-      moveSpeed: 2
+      speedOrDuration: 1
     music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -75,8 +75,8 @@ MonoBehaviour:
     - speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
       spriteIndex: 2
       actionType: 1
-      coords: {x: 0, y: 0}
-      moveSpeed: 0
+      coords: {x: -500, y: 0}
+      speedOrDuration: 0
     music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -87,12 +87,12 @@ MonoBehaviour:
       spriteIndex: 2
       actionType: 2
       coords: {x: 500, y: 0}
-      moveSpeed: 2
+      speedOrDuration: 2
     - speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
       spriteIndex: 2
       actionType: 3
       coords: {x: 500, y: 0}
-      moveSpeed: 2
+      speedOrDuration: 1
     music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
     sound: {fileID: 8300000, guid: 81fae3d7b961793458e820cf1f2a2fa3, type: 3}
     soundLoop: 0
