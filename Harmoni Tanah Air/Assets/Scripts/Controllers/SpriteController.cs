@@ -25,7 +25,7 @@ public class SpriteController : MonoBehaviour
         switcher.SyncImages();
     }
 
-    public void Show(Vector2 coords, bool isAnimated = true)
+    public void Show(float coordX, bool isAnimated = true)
     {
         if (isAnimated)
         {
@@ -37,7 +37,7 @@ public class SpriteController : MonoBehaviour
             animator.enabled = false;
             canvasGroup.alpha = 1;
         }
-        rect.localPosition = coords;
+        rect.localPosition = new Vector2(coordX, 165f);
     }
 
     public void Hide(float duration, bool isAnimated = true)
@@ -61,15 +61,15 @@ public class SpriteController : MonoBehaviour
         animator.SetTrigger("Hide");
     }
 
-    public void Move(Vector2 coords, float speed, bool isAnimated = true)
+    public void Move(float coordX, float speed, bool isAnimated = true)
     {
         if (isAnimated)
         {
-            StartCoroutine(MoveCoroutine(coords, speed));
+            StartCoroutine(MoveCoroutine(new Vector2(coordX, 165f), speed));
         }
         else
         {
-            rect.localPosition = coords;
+            rect.localPosition = new Vector2(coordX, 165f);
         }    
     }
 
@@ -82,7 +82,7 @@ public class SpriteController : MonoBehaviour
         }
     }
 
-    public void SwitchSprite(Vector2 coords, Sprite sprite, bool isAnimated = true)
+    public void SwitchSprite(float coordX, Sprite sprite, bool isAnimated = true)
     {
         if (switcher.GetImage() != sprite)
         {
@@ -95,6 +95,6 @@ public class SpriteController : MonoBehaviour
                 switcher.SetImage(sprite);
             }
         }
-        rect.localPosition = coords;
+        rect.localPosition = new Vector2(coordX, 165f);
     }
 }

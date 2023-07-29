@@ -30,7 +30,7 @@ public class StoryScene : GameScene
             public float startCoords;
             public float endCoords;
             public float speed;
-            public float coords;
+            public float coordX;
             public float duration;
 
             [System.Serializable]

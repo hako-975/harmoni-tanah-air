@@ -195,9 +195,6 @@ public class DialogBarController : MonoBehaviour
 
     private void ActSpeaker(StoryScene.Sentence.Action action, bool isAnimated = true)
     {
-        // timpa coords y
-        /*action.coords.y = 165;*/
-
         SpriteController controller;
 
         if (!sprites.ContainsKey(action.speaker))
@@ -210,23 +207,23 @@ public class DialogBarController : MonoBehaviour
             controller = sprites[action.speaker];
         }
 
-        /*switch (action.actionType)
+        switch (action.actionType)
         {
-            *//*case StoryScene.Sentence.Action.Type.APPEAR:
+            case StoryScene.Sentence.Action.ActionType.APPEAR:
                 controller.Setup(action.sprite);
-                controller.Show(action.coords, isAnimated);
+                controller.Show(action.coordX, isAnimated);
                 return;
-            case StoryScene.Sentence.Action.Type.MOVE:
-                controller.SwitchSprite(action.coords, action.sprite, isAnimated);
-                controller.Move(action.coords, action.speedOrDuration, isAnimated);
+            case StoryScene.Sentence.Action.ActionType.MOVE:
+                controller.SwitchSprite(action.startCoords, action.sprite, isAnimated);
+                controller.Move(action.endCoords, action.speed, isAnimated);
                 return;
-            case StoryScene.Sentence.Action.Type.DISAPPEAR:
-                controller.Hide(action.speedOrDuration, isAnimated);
+            case StoryScene.Sentence.Action.ActionType.DISAPPEAR:
+                controller.Hide(action.duration, isAnimated);
                 return;
-            case StoryScene.Sentence.Action.Type.NONE:
-                controller.SwitchSprite(action.coords, action.sprite, isAnimated);
-                return;*//*
-        }*/
+            case StoryScene.Sentence.Action.ActionType.NONE:
+                controller.SwitchSprite(action.coordX, action.sprite, isAnimated);
+                return;
+        }
 
     }
 }

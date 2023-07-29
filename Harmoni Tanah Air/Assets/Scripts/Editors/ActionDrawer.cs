@@ -59,8 +59,8 @@ public class ActionDrawer : PropertyDrawer
 
     private void DrawCoordsField(ref Rect position, SerializedProperty property)
     {
-        SerializedProperty coords = property.FindPropertyRelative("coords");
-        DrawFieldWithLabel(ref position, coords);
+        SerializedProperty coordX = property.FindPropertyRelative("coordX");
+        DrawFieldWithLabel(ref position, coordX);
     }
 
     private void DrawMoveFields(ref Rect position, SerializedProperty property)
