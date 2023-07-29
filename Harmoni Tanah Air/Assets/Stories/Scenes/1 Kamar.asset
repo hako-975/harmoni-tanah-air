@@ -19,28 +19,34 @@ MonoBehaviour:
     music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
-  - text: Pukul 6 pagi alarm berbunyi
+  - text: Pukul 6 pagi alarm pun berbunyi
+    speaker: {fileID: 11400000, guid: 5f41f85557945064aabeed32ef0f8019, type: 2}
+    actions: []
+    music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Kring kring kring...
     speaker: {fileID: 11400000, guid: 5f41f85557945064aabeed32ef0f8019, type: 2}
     actions: []
     music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
     sound: {fileID: 8300000, guid: ecf142dfeae8cf14fbf62e529f389154, type: 3}
     soundLoop: 1
-  - text: hmmmm...
+  - text: Eeemmm...
     speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
-      spriteIndex: 0
+      sprite: {fileID: 21300000, guid: 9aaf1c3f1db5a054398f1d33ef70faec, type: 3}
       actionType: 1
       coords: {x: 0, y: 0}
       speedOrDuration: 0
     music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
-  - text: "(Melihat kalender) \nAsikk hari ini udah masuk sekolah"
+  - text: Asiiikkk hari ini udah masuk sekolah
     speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
-      spriteIndex: 1
+      sprite: {fileID: 21300000, guid: f2392c8a30844ae4cbeeb8575a7df72a, type: 3}
       actionType: 0
       coords: {x: 0, y: 0}
       speedOrDuration: 0
@@ -51,45 +57,45 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 5f41f85557945064aabeed32ef0f8019, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
-      spriteIndex: 3
+      sprite: {fileID: 21300000, guid: 7a70aa2a1c8bb0d4286dbd3caf590452, type: 3}
       actionType: 2
       coords: {x: -500, y: 0}
       speedOrDuration: 2
     - speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
-      spriteIndex: 3
+      sprite: {fileID: 21300000, guid: 7a70aa2a1c8bb0d4286dbd3caf590452, type: 3}
       actionType: 3
-      coords: {x: 0, y: 0}
-      speedOrDuration: 1
+      coords: {x: -500, y: 0}
+      speedOrDuration: 0.5
     music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
-  - text: (Sedang mandi)
+  - text: Suara sedang mandi
     speaker: {fileID: 11400000, guid: 5f41f85557945064aabeed32ef0f8019, type: 2}
     actions: []
     music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
     sound: {fileID: 8300000, guid: 4206e29c73c70754eab08ef6fb4a4fb8, type: 3}
     soundLoop: 1
-  - text: Sipp udah cantik, waktunya berangkat sekolah
+  - text: Sippp udah cantik, waktunya berangkat sekolah
     speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
-      spriteIndex: 2
+      sprite: {fileID: 21300000, guid: 6c40b6ff6654d094889f9ff4a501ab3b, type: 3}
       actionType: 1
       coords: {x: -500, y: 0}
       speedOrDuration: 0
     music: {fileID: 8300000, guid: 44603a9ce921a83429b847298307a7ec, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
-  - text: (Dia pun pergi ke sekolah)
-    speaker: {fileID: 11400000, guid: 5f41f85557945064aabeed32ef0f8019, type: 2}
+  - text: Dia pun berangkat ke sekolah
+    speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
-      spriteIndex: 2
+      sprite: {fileID: 21300000, guid: 6c40b6ff6654d094889f9ff4a501ab3b, type: 3}
       actionType: 2
       coords: {x: 500, y: 0}
       speedOrDuration: 2
     - speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
-      spriteIndex: 2
+      sprite: {fileID: 21300000, guid: 6c40b6ff6654d094889f9ff4a501ab3b, type: 3}
       actionType: 3
       coords: {x: 500, y: 0}
       speedOrDuration: 1

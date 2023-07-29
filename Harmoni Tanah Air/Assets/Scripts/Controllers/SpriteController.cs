@@ -63,7 +63,6 @@ public class SpriteController : MonoBehaviour
 
     public void Move(Vector2 coords, float speed, bool isAnimated = true)
     {
-        switcher.SyncImages();
         if (isAnimated)
         {
             StartCoroutine(MoveCoroutine(coords, speed));
@@ -80,11 +79,10 @@ public class SpriteController : MonoBehaviour
         {
             rect.localPosition = Vector2.MoveTowards(rect.localPosition, coords, Time.deltaTime * 1000f * speed);
             yield return new WaitForSeconds(0.01f);
-
         }
     }
 
-    public void SwitchSprite(Sprite sprite, bool isAnimated = true)
+    public void SwitchSprite(Vector2 coords, Sprite sprite, bool isAnimated = true)
     {
         if (switcher.GetImage() != sprite)
         {
@@ -97,5 +95,6 @@ public class SpriteController : MonoBehaviour
                 switcher.SetImage(sprite);
             }
         }
+        rect.localPosition = coords;
     }
 }

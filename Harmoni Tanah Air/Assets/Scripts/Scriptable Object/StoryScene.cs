@@ -24,15 +24,22 @@ public class StoryScene : GameScene
         public struct Action
         {
             public Speaker speaker;
-            public int spriteIndex;
-            public Type actionType;
-            public Vector2 coords;
-            public float speedOrDuration;
+            public Sprite sprite;
+            public ActionType actionType;
+
+            public float startCoords;
+            public float endCoords;
+            public float speed;
+            public float coords;
+            public float duration;
 
             [System.Serializable]
-            public enum Type
+            public enum ActionType
             {
-                NONE, APPEAR, MOVE, DISAPPEAR
+                NONE,
+                APPEAR,
+                MOVE,
+                DISAPPEAR
             }
         }
     }

@@ -1,0 +1,62 @@
+1 Kamar
+Narrator: Pada hari Senin, sinar matahari cerah menyapa gadis SMA yang sedang tertidur
+music: kamar
+
+1 Kamar
+Narrator: Pukul 6 pagi alarm pun berbunyi
+music: kamar
+
+1 Kamar
+Narrator: Kring kring kring...
+music: kamar
+sfx: alarm -> loop
+
+1 Kamar
+Dewi Unknown: Eeemmm...
+music: kamar
+Anim: Dewi Mengantuk -> Appear(0)
+
+1 Kamar
+Dewi Unknown: Asiiikkk hari ini udah masuk sekolah
+music: kamar
+anim: Dewi Senang -> none(0)
+
+1 Kamar
+Narrator : Dia pun siap-siap untuk berangkat ke sekolah
+music: kamar
+anim: Dewi Normal -> move(-500, 2)
+anim: Dewi Normal -> dissapear(0.5)
+
+1 Kamar
+Narrator : Suara sedang mandi
+music: kamar
+sfx: suara mandi
+
+1 Kamar
+Dewi Unknown: Sippp udah cantik, waktunya berangkat sekolah
+music: kamar
+anim: Dewi Seragam normal -> appear(-500)
+
+1 Kamar
+Narrator: Dia pun berangkat ke sekolah
+sfx: langkah kaki
+anim: Dewi Seragam normal -> move(500, 2)
+anim: Dewi Seragam normal -> dissapear(1)
+
+
+Background: kamar
+
+2 Gerbang Sekolah
+Narrator: Sesampai di sekolah...
+Music: Sekolah
+
+2
+Dewi Unknown: Fyuhhh untung belum terlambat
+anim: Dewi Seragam fyuhhh -> appear(500)
+Music: Sekolah
+
+
+2
+Narrator: Dia pun berlari
+anim: Dewi Seragam normal -> none(500)
+Music: Sekolah
