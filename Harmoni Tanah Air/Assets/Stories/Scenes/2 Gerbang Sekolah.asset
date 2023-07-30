@@ -25,8 +25,11 @@ MonoBehaviour:
     - speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
       sprite: {fileID: 21300000, guid: 686fbdecf900bb043892789c421bffce, type: 3}
       actionType: 1
-      coords: {x: 500, y: 0}
-      speedOrDuration: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 500
+      duration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -36,13 +39,19 @@ MonoBehaviour:
     - speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
       sprite: {fileID: 21300000, guid: 6c40b6ff6654d094889f9ff4a501ab3b, type: 3}
       actionType: 2
-      coords: {x: -500, y: 0}
-      speedOrDuration: 3
+      startCoords: 500
+      endCoords: -500
+      speed: 3
+      coordX: 0
+      duration: 0
     - speaker: {fileID: 11400000, guid: c7d153af9f3c6fb4298f1a96928aa3b9, type: 2}
       sprite: {fileID: 21300000, guid: 6c40b6ff6654d094889f9ff4a501ab3b, type: 3}
       actionType: 3
-      coords: {x: -500, y: 0}
-      speedOrDuration: 1
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 0
+      duration: 1
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 8300000, guid: 81fae3d7b961793458e820cf1f2a2fa3, type: 3}
     soundLoop: 0

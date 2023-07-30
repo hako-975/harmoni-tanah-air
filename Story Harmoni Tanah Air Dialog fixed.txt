@@ -1,3 +1,4 @@
+
 1 Kamar
 Narrator: Pada hari Senin, sinar matahari cerah menyapa gadis SMA yang sedang tertidur
 music: kamar
@@ -24,13 +25,13 @@ anim: Dewi Senang -> none(0)
 1 Kamar
 Narrator : Dia pun siap-siap untuk berangkat ke sekolah
 music: kamar
-anim: Dewi Normal -> move(-500, 2)
+anim: Dewi Normal -> move(0, -500, 2)
 anim: Dewi Normal -> dissapear(0.5)
 
 1 Kamar
 Narrator : Suara sedang mandi
 music: kamar
-sfx: suara mandi
+sfx: suara mandi -> loop
 
 1 Kamar
 Dewi Unknown: Sippp udah cantik, waktunya berangkat sekolah
@@ -40,23 +41,172 @@ anim: Dewi Seragam normal -> appear(-500)
 1 Kamar
 Narrator: Dia pun berangkat ke sekolah
 sfx: langkah kaki
-anim: Dewi Seragam normal -> move(500, 2)
+anim: Dewi Seragam normal -> move(-500, 500, 2)
 anim: Dewi Seragam normal -> dissapear(1)
 
-
 Background: kamar
+
+------------------------------------------------------------------------------------------------------
 
 2 Gerbang Sekolah
 Narrator: Sesampai di sekolah...
 Music: Sekolah
 
-2
+2 Gerbang Sekolah
 Dewi Unknown: Fyuhhh untung belum terlambat
 anim: Dewi Seragam fyuhhh -> appear(500)
 Music: Sekolah
 
-
-2
+2 Gerbang Sekolah
 Narrator: Dia pun berlari
-anim: Dewi Seragam normal -> none(500)
+anim: Dewi Seragam normal -> Move(-500, 500, 3)
 Music: Sekolah
+
+2 Gerbang Sekolah
+Narrator: Kring Kring Kring
+Music: Sekolah
+Sfx: bel sekolah
+
+Background: gerbang sekolah
+
+------------------------------------------------------------------------------------------------------
+
+3 Lapangan Sekolah
+Bu Rani Unknown: Selamat pagi anak-anak, silahkan bentuk barisan karena upacara akan segera dimulai 
+anim: bu rani seragam bicara -> appear(0)
+Music: Sekolah
+sfx: keramaian -> loop
+
+3 Lapangan Sekolah
+narrator: Upacara bendera pun dimulai
+anim: bu rani seragam normal -> move(0, -500, 1)
+anim: bu rani seragam normal -> dissapear(1)
+
+3 Lapangan Sekolah
+narrator: Menyanyikan lagu Indonesia Raya
+music: Indonesia Raya
+
+3 Lapangan Sekolah
+narrator: Upacara bendera selesai
+music: Sekolah
+
+3 Lapangan Sekolah
+bu rani unknown: Baiklah, anak-anak, sebelum kembali ke kelas masing-masing ibu ada pengumuman penting
+anim: bu rani seragam normal -> appear(-500)
+anim: bu rani seragam bicara -> move(-500, 0, 1)
+music: Sekolah
+
+3 Lapangan Sekolah
+bu rani unknown: Sekolah kita akan mengadakan Festival Budaya Indonesia pada tanggal 2 bulan Agustus
+anim: bu rani seragam kedip -> none(0)
+anim: bu rani seragam bicara -> none(0)
+music: Sekolah
+
+3 Lapangan Sekolah
+bu rani unknown: Ada empat tema yang ditentukan, yaitu: tarian tradisional, musik tradisional, seni rupa tradisional, dan upacara adat tradisional
+anim: bu rani seragam kedip -> none(0)
+anim: bu rani seragam bicara -> none(0)
+music: Sekolah
+
+3 Lapangan Sekolah
+bu rani unknown: Semua siswa diundang untuk berpartisipasi baik secara individu maupun kelompoktradisional, dan upacara adat tradisional
+anim: bu rani seragam kedip -> none(0)
+anim: bu rani seragam bicara -> none(0)
+music: Sekolah
+
+3 Lapangan Sekolah
+bu rani unknown: Persiapkan penampilan terbaik kalian karena penampilan terbaik akan mendapatkan hadiah terbaik dari sekolah dan dapat berpartisipasi ke lomba Nasional
+anim: bu rani seragam kedip -> none(0)
+anim: bu rani seragam bicara -> none(0)
+music: Sekolah
+
+3 Lapangan Sekolah
+bu rani unknown: Bagi yang ingin berpatisipasi silahkan daftar di link:
+bit.ly/festival-budaya-sma-harmoni
+anim: bu rani seragam kedip -> none(0)
+anim: bu rani seragam bicara -> none(0)
+music: Sekolah
+
+3 Lapangan Sekolah
+bu rani unknown: Atau kalian bisa scan QR berikut:
+anim: bu rani seragam kedip -> none(0)
+anim: bu rani seragam bicara -> none(0)
+anim: qr code -> appear(500)
+music: Sekolah
+
+3 Lapangan Sekolah
+bu rani unknown: Baik itu saja yang ingin saya sampaikan
+anim: bu rani seragam kedip -> none(0)
+anim: bu rani seragam bicara -> none(0)
+anim: qr code -> disappear(0)
+music: Sekolah
+
+3 Lapangan Sekolah
+bu rani unknown: Kembali ke kelas kalian masing-masing, sekian terima kasih
+anim: bu rani seragam kedip -> none(0)
+anim: bu rani seragam bicara -> none(0)
+music: Sekolah
+
+3 Lapangan Sekolah
+narrator: Para murid kembali ke kelas masing-masing
+anim: bu rani seragam normal -> move(0, -500, 1)
+anim: bu rani seragam normal -> disappear(1)
+music: Sekolah
+
+3 Lapangan Sekolah
+dewi unknown: Wah, ini kesempatan bagus! Kita harus berpartisipasi Ayu!
+anim: dewi seragam senang -> appear(-250)
+music: Sekolah
+
+3 Lapangan Sekolah
+Ayu: Ya, kamu benar Dewi! Ayo buat sesuatu yang spektakuler!
+anim: ayu seragam senang -> appear(250)
+music: Sekolah
+
+3 Lapangan Sekolah
+Dewi: Ayu, mari kita bikin kelompok bersama!
+anim: dewi seragam semangat dewi unknown -> disappear(0)
+anim: dewi seragam semangat -> appear(-250)
+music: Sekolah
+
+3 Lapangan Sekolah
+Ayu: Ahh, setuju!
+anim: ayu seragam terkejut -> none(250)
+anim: ayu seragam senyum -> none(250)
+music: Sekolah
+
+3 Lapangan Sekolah
+Dewi: Asikk!!!
+anim: dewi seragam senyum -> none(-250)
+music: Sekolah
+
+3 Lapangan Sekolah
+Narrator: Kring Kring Kring
+anim: dewi seragam normal -> none(-250)
+anim: ayu seragam normal -> none(250)
+music: Sekolah
+
+3 Lapangan Sekolah
+Ayu: Wah udah bunyi bel, ayo kita kembali ke kelas
+anim: ayu seragam terkejut -> none(250)
+music: Sekolah
+
+3 Lapangan Sekolah
+Dewi: Oke, Ayu
+anim: Dewi seragam senyum -> none(-250)
+anim: Dewi seragam normal -> move(-250, 500, 2)
+anim: Dewi seragam normal -> dissapear(1)
+anim: Ayu seragam normal -> move(250, 500, 2)
+anim: Ayu seragam normal -> dissapear(0)
+music: Sekolah
+sfx: langkah kaki
+
+------------------------------------------------------------------------------------------------------
+
+4 Lorong Sekolah
+Narrator: Dewi dan Ayu pun berjalan menuju kelas
+anim: dewi seragam normal -> appear(500)
+anim: dewi seragam normal -> move(500, -250, 1.5)
+anim: ayu seragam normal -> appear(500)
+anim: ayu seragam normal -> move(500, 250, 0.5)
+music: Sekolah

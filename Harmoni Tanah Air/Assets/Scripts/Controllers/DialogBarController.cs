@@ -214,7 +214,7 @@ public class DialogBarController : MonoBehaviour
                 controller.Show(action.coordX, isAnimated);
                 return;
             case StoryScene.Sentence.Action.ActionType.MOVE:
-                controller.SwitchSprite(action.startCoords, action.sprite, isAnimated);
+                controller.SwitchSprite(action.startCoords, action.sprite, false);
                 controller.Move(action.endCoords, action.speed, isAnimated);
                 return;
             case StoryScene.Sentence.Action.ActionType.DISAPPEAR:

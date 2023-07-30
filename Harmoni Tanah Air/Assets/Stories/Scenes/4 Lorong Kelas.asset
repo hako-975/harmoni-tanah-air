@@ -17,25 +17,37 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 5f41f85557945064aabeed32ef0f8019, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
-      sprite: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 6c40b6ff6654d094889f9ff4a501ab3b, type: 3}
       actionType: 1
-      coords: {x: 500, y: 0}
-      speedOrDuration: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 500
+      duration: 0
     - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
-      sprite: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 6c40b6ff6654d094889f9ff4a501ab3b, type: 3}
       actionType: 2
-      coords: {x: -250, y: 0}
-      speedOrDuration: 1.5
+      startCoords: 500
+      endCoords: -250
+      speed: 1.5
+      coordX: 0
+      duration: 0
     - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
-      sprite: {fileID: 0}
+      sprite: {fileID: 21300000, guid: f9bcb375622416346a50cc0971d83ab4, type: 3}
       actionType: 1
-      coords: {x: 500, y: 0}
-      speedOrDuration: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 500
+      duration: 0
     - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
-      sprite: {fileID: 0}
+      sprite: {fileID: 21300000, guid: f9bcb375622416346a50cc0971d83ab4, type: 3}
       actionType: 2
-      coords: {x: 250, y: 0}
-      speedOrDuration: 0.5
+      startCoords: 500
+      endCoords: 250
+      speed: 0.5
+      coordX: 0
+      duration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -43,10 +55,21 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 5f41f85557945064aabeed32ef0f8019, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
-      sprite: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 5e6087424ed1c9c41a087be2f2df00ed, type: 3}
       actionType: 0
-      coords: {x: -250, y: 0}
-      speedOrDuration: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: -250
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+      sprite: {fileID: 21300000, guid: f9bcb375622416346a50cc0971d83ab4, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 250
+      duration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -54,10 +77,13 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
-      sprite: {fileID: 0}
+      sprite: {fileID: 21300000, guid: fe4d34053d4405d4fa72e0a54af4e3a4, type: 3}
       actionType: 0
-      coords: {x: 250, y: 0}
-      speedOrDuration: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 250
+      duration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -77,15 +103,13 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
-      sprite: {fileID: 0}
+      sprite: {fileID: 21300000, guid: b803cce81825a4c4aa552f9864b1986c, type: 3}
       actionType: 0
-      coords: {x: -250, y: 0}
-      speedOrDuration: 0
-    - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
-      sprite: {fileID: 0}
-      actionType: 0
-      coords: {x: 250, y: 0}
-      speedOrDuration: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: -250
+      duration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -93,41 +117,43 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
-      sprite: {fileID: 0}
+      sprite: {fileID: 21300000, guid: ebbb1d4ed05e4834886a811fb04d464d, type: 3}
       actionType: 0
-      coords: {x: -250, y: 0}
-      speedOrDuration: 0
-    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
-      sprite: {fileID: 0}
-      actionType: 0
-      coords: {x: -250, y: 0}
-      speedOrDuration: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: -250
+      duration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
   - text: Halo Dewi, lama tak jumpa, apa kabar?
     speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
     actions:
-    - speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
-      sprite: {fileID: 0}
-      actionType: 1
-      coords: {x: -1000, y: 0}
-      speedOrDuration: 0
-    - speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
-      sprite: {fileID: 0}
-      actionType: 2
-      coords: {x: -500, y: 0}
-      speedOrDuration: 1
     - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
-      sprite: {fileID: 0}
+      sprite: {fileID: 21300000, guid: ebbffbfc0f23a154eaf331d74b28c455, type: 3}
       actionType: 2
-      coords: {x: 0, y: 0}
-      speedOrDuration: 0.5
+      startCoords: -250
+      endCoords: 0
+      speed: 0.5
+      coordX: 0
+      duration: 0
     - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
-      sprite: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 4ba204903076f824180f810c2b79a58a, type: 3}
       actionType: 2
-      coords: {x: 500, y: 0}
-      speedOrDuration: 0.5
+      startCoords: 250
+      endCoords: 500
+      speed: 0.5
+      coordX: 0
+      duration: 0
+    - speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+      sprite: {fileID: 21300000, guid: fe33128b733df544fa1409f6fdf5a458, type: 3}
+      actionType: 1
+      startCoords: 250
+      endCoords: 500
+      speed: 0.5
+      coordX: -500
+      duration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -135,20 +161,29 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
-      sprite: {fileID: 0}
+      sprite: {fileID: 21300000, guid: e47541013e6a85b4ab3488b373c4c105, type: 3}
       actionType: 0
-      coords: {x: 0, y: 0}
-      speedOrDuration: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 0
+      duration: 0
     - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
-      sprite: {fileID: 0}
+      sprite: {fileID: 21300000, guid: f9bcb375622416346a50cc0971d83ab4, type: 3}
       actionType: 0
-      coords: {x: 500, y: 0}
-      speedOrDuration: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 500
+      duration: 0
     - speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
-      sprite: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 64cee920299a05743bbbc7b42b3ef9fa, type: 3}
       actionType: 0
-      coords: {x: -500, y: 0}
-      speedOrDuration: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: -500
+      duration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -156,10 +191,13 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
-      sprite: {fileID: 0}
+      sprite: {fileID: 21300000, guid: ebbffbfc0f23a154eaf331d74b28c455, type: 3}
       actionType: 0
-      coords: {x: 0, y: 0}
-      speedOrDuration: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 0
+      duration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0
@@ -167,10 +205,453 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
-      sprite: {fileID: 0}
+      sprite: {fileID: 21300000, guid: fe33128b733df544fa1409f6fdf5a458, type: 3}
       actionType: 0
-      coords: {x: -500, y: 0}
-      speedOrDuration: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: -500
+      duration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Eh dri, mau gabung kelompok aku ngga? bolehkan Ayu?
+    speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+      sprite: {fileID: 21300000, guid: 64cee920299a05743bbbc7b42b3ef9fa, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: -500
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      sprite: {fileID: 21300000, guid: ebbb1d4ed05e4834886a811fb04d464d, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 0
+      duration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Aku sih oke-oke aja
+    speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+      sprite: {fileID: 21300000, guid: 4ba204903076f824180f810c2b79a58a, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 500
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      sprite: {fileID: 21300000, guid: 6c40b6ff6654d094889f9ff4a501ab3b, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 0
+      duration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Asikk, gimana dri mau gabung?
+    speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      sprite: {fileID: 21300000, guid: ebbb1d4ed05e4834886a811fb04d464d, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 0
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+      sprite: {fileID: 21300000, guid: f9bcb375622416346a50cc0971d83ab4, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 500
+      duration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Hmmm
+    speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+      sprite: {fileID: 21300000, guid: 88e7073317ab17a4f9f315594ea12a4d, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: -500
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      sprite: {fileID: 21300000, guid: 6c40b6ff6654d094889f9ff4a501ab3b, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 0
+      duration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Ayo dong kita kan udah saling kenal dari SMP
+    speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      sprite: {fileID: 21300000, guid: ebbb1d4ed05e4834886a811fb04d464d, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 0
+      duration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: 'Udah kita cari yang laen aja, Dewi '
+    speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      sprite: {fileID: 21300000, guid: 6c40b6ff6654d094889f9ff4a501ab3b, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 0
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+      sprite: {fileID: 21300000, guid: 183cc2d9809ea8e418a369b65e44df2e, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 500
+      duration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Tunggu dulu, okelah aku gabung kelompok kalian
+    speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+      sprite: {fileID: 21300000, guid: fe33128b733df544fa1409f6fdf5a458, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: -500
+      duration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Asik!!!
+    speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      sprite: {fileID: 21300000, guid: e47541013e6a85b4ab3488b373c4c105, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 0
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+      sprite: {fileID: 21300000, guid: d12f1adefefa28444a06dbcd74202359, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 500
+      duration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Tapi kita harus memilih tema yang sesuai. Kalian tertarik sama tema yang
+      mana?
+    speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+      sprite: {fileID: 21300000, guid: 88e7073317ab17a4f9f315594ea12a4d, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: -500
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      sprite: {fileID: 21300000, guid: 6c40b6ff6654d094889f9ff4a501ab3b, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 0
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+      sprite: {fileID: 21300000, guid: f9bcb375622416346a50cc0971d83ab4, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 500
+      duration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Aku tertarik pada tarian tradisional
+    speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+      sprite: {fileID: 21300000, guid: 64cee920299a05743bbbc7b42b3ef9fa, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: -500
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      sprite: {fileID: 21300000, guid: ebbb1d4ed05e4834886a811fb04d464d, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 0
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+      sprite: {fileID: 21300000, guid: f9bcb375622416346a50cc0971d83ab4, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 500
+      duration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Bagus, kalo aku ingin fokus pada musik tradisional
+    speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+      sprite: {fileID: 21300000, guid: 64cee920299a05743bbbc7b42b3ef9fa, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: -500
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      sprite: {fileID: 21300000, guid: 6c40b6ff6654d094889f9ff4a501ab3b, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 0
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+      sprite: {fileID: 21300000, guid: d12f1adefefa28444a06dbcd74202359, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 500
+      duration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Kalau begitu, aku rasa seni rupa tradisional menarik juga
+    speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+      sprite: {fileID: 21300000, guid: 64cee920299a05743bbbc7b42b3ef9fa, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: -500
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      sprite: {fileID: 21300000, guid: 6c40b6ff6654d094889f9ff4a501ab3b, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 0
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+      sprite: {fileID: 21300000, guid: f9bcb375622416346a50cc0971d83ab4, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 500
+      duration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Dewi ayo kita masuk kelas mungkin udah ada guru di kelas
+    speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+      sprite: {fileID: 21300000, guid: 64cee920299a05743bbbc7b42b3ef9fa, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: -500
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      sprite: {fileID: 21300000, guid: 6c40b6ff6654d094889f9ff4a501ab3b, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 0
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+      sprite: {fileID: 21300000, guid: 33d0a86aebc88034097b89cf7c6bf99b, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 500
+      duration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Astaga aku lupa
+    speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+      sprite: {fileID: 21300000, guid: 64cee920299a05743bbbc7b42b3ef9fa, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: -500
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      sprite: {fileID: 21300000, guid: b803cce81825a4c4aa552f9864b1986c, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 0
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+      sprite: {fileID: 21300000, guid: f9bcb375622416346a50cc0971d83ab4, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 500
+      duration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Aku juga harus ke kelas, nanti kita diskusiin lagi di kantin pas jam makan
+      siang
+    speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+      sprite: {fileID: 21300000, guid: 64cee920299a05743bbbc7b42b3ef9fa, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: -500
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      sprite: {fileID: 21300000, guid: 6c40b6ff6654d094889f9ff4a501ab3b, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 0
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+      sprite: {fileID: 21300000, guid: f9bcb375622416346a50cc0971d83ab4, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 500
+      duration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Oke!
+    speaker: {fileID: 11400000, guid: e0883bb701ce5c548a6c465d6788e4b3, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+      sprite: {fileID: 21300000, guid: 64cee920299a05743bbbc7b42b3ef9fa, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: -500
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      sprite: {fileID: 21300000, guid: e47541013e6a85b4ab3488b373c4c105, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 0
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+      sprite: {fileID: 21300000, guid: 4ba204903076f824180f810c2b79a58a, type: 3}
+      actionType: 0
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 500
+      duration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Mereka pun kembali ke kelas
+    speaker: {fileID: 11400000, guid: 5f41f85557945064aabeed32ef0f8019, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+      sprite: {fileID: 21300000, guid: 64cee920299a05743bbbc7b42b3ef9fa, type: 3}
+      actionType: 3
+      startCoords: -500
+      endCoords: -1000
+      speed: 1
+      coordX: -500
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+      sprite: {fileID: 21300000, guid: f9bcb375622416346a50cc0971d83ab4, type: 3}
+      actionType: 3
+      startCoords: 500
+      endCoords: 1000
+      speed: 1
+      coordX: 500
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      sprite: {fileID: 21300000, guid: 6c40b6ff6654d094889f9ff4a501ab3b, type: 3}
+      actionType: 2
+      startCoords: 0
+      endCoords: 500
+      speed: 1
+      coordX: 0
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      sprite: {fileID: 21300000, guid: 6c40b6ff6654d094889f9ff4a501ab3b, type: 3}
+      actionType: 3
+      startCoords: 0
+      endCoords: 1000
+      speed: 2
+      coordX: 0
+      duration: 0
     music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
     sound: {fileID: 0}
     soundLoop: 0

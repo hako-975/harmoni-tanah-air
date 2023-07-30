@@ -82,7 +82,7 @@ public class GameController : MonoBehaviour
 
             currentScene = history[history.Count - 1];
             history.RemoveAt(history.Count - 1);
-            dialogBar.SetSentenceIndex(data.sentence - 2);
+            dialogBar.SetSentenceIndex(data.sentence - 1);
             PlayerPrefsController.instance.DeleteKey("SlotSceneLoadGame");
         }
 

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af58f2bfae6afb74494969c45712243d, type: 3}
-  m_Name: Ayu
+  m_Name: Dewi & Ayu
   m_EditorClassIdentifier: 
-  speakerName: Ayu
-  textColor: {r: 1, g: 0.94392526, b: 0, a: 1}
+  speakerName: Dewi & Ayu
+  textColor: {r: 1, g: 1, b: 1, a: 1}
   prefab: {fileID: 1009273316917457023, guid: e443a1ecf35f9c4409a88b2d9c2a5a00, type: 3}
