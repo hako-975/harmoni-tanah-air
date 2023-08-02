@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33238ce789405164dbd6cd2d8669ca9a, type: 3}
+  m_Name: 5 Kantin
+  m_EditorClassIdentifier: 
+  sentences:
+  - text: Jam makan siang pun tiba, sesuai janji tadi pagi mereka pun berkumpul dikantin
+      dan melanjutkan diskusi tema apa yang akan diambil
+    speaker: {fileID: 11400000, guid: 5f41f85557945064aabeed32ef0f8019, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      sprite: {fileID: 21300000, guid: 6c40b6ff6654d094889f9ff4a501ab3b, type: 3}
+      actionType: 1
+      startCoords: 0
+      endCoords: 0
+      speed: 0
+      coordX: 500
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      sprite: {fileID: 21300000, guid: 6c40b6ff6654d094889f9ff4a501ab3b, type: 3}
+      actionType: 2
+      startCoords: 500
+      endCoords: 0
+      speed: 1
+      coordX: 500
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+      sprite: {fileID: 21300000, guid: f9bcb375622416346a50cc0971d83ab4, type: 3}
+      actionType: 1
+      startCoords: 500
+      endCoords: 0
+      speed: 1
+      coordX: 500
+      duration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Mana nih Andri?
+    speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      sprite: {fileID: 21300000, guid: 6c40b6ff6654d094889f9ff4a501ab3b, type: 3}
+      actionType: 0
+      startCoords: 500
+      endCoords: 0
+      speed: 1
+      coordX: 0
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+      sprite: {fileID: 21300000, guid: f9bcb375622416346a50cc0971d83ab4, type: 3}
+      actionType: 0
+      startCoords: 500
+      endCoords: 0
+      speed: 1
+      coordX: 500
+      duration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Tuh dia panjang umur
+    speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      sprite: {fileID: 21300000, guid: 6c40b6ff6654d094889f9ff4a501ab3b, type: 3}
+      actionType: 0
+      startCoords: 500
+      endCoords: 0
+      speed: 1
+      coordX: 0
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+      sprite: {fileID: 21300000, guid: f9bcb375622416346a50cc0971d83ab4, type: 3}
+      actionType: 0
+      startCoords: 500
+      endCoords: 0
+      speed: 1
+      coordX: 500
+      duration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  - text: Halo
+    speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 5f80f3726d26047418a6f1ade40ff2e8, type: 2}
+      sprite: {fileID: 21300000, guid: 6c40b6ff6654d094889f9ff4a501ab3b, type: 3}
+      actionType: 0
+      startCoords: 500
+      endCoords: 0
+      speed: 1
+      coordX: 0
+      duration: 0
+    - speaker: {fileID: 11400000, guid: 91df24488b08c884297a5441aeee6d79, type: 2}
+      sprite: {fileID: 21300000, guid: f9bcb375622416346a50cc0971d83ab4, type: 3}
+      actionType: 0
+      startCoords: 500
+      endCoords: 0
+      speed: 1
+      coordX: 500
+      duration: 0
+    - speaker: {fileID: 11400000, guid: ff7ed4bb7f53d1843af6cca1f998e5be, type: 2}
+      sprite: {fileID: 21300000, guid: 64cee920299a05743bbbc7b42b3ef9fa, type: 3}
+      actionType: 1
+      startCoords: 500
+      endCoords: 0
+      speed: 1
+      coordX: -500
+      duration: 0
+    music: {fileID: 8300000, guid: 87fb00d5a91b8c340a2dc0f252708164, type: 3}
+    sound: {fileID: 0}
+    soundLoop: 0
+  background: {fileID: 21300000, guid: ea85e8fd1db07b24ebdb0e3aeb983414, type: 3}
+  nextScene: {fileID: 11400000}
