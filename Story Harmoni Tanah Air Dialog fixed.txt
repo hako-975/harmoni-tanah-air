@@ -166,17 +166,20 @@ music: Sekolah
 Dewi: Ayu, mari kita bikin kelompok bersama!
 anim: dewi seragam semangat dewi unknown -> disappear(0)
 anim: dewi seragam semangat -> appear(-250)
+anim: ayu seragam senang -> none(250)
 music: Sekolah
 
 3 Lapangan Sekolah
 Ayu: Ahh, setuju!
 anim: ayu seragam terkejut -> none(250)
 anim: ayu seragam senyum -> none(250)
+anim: dewi seragam semangat -> none(-250)
 music: Sekolah
 
 3 Lapangan Sekolah
 Dewi: Asikk!!!
 anim: dewi seragam senyum -> none(-250)
+anim: ayu seragam senyum -> none(250)
 music: Sekolah
 
 3 Lapangan Sekolah
@@ -187,6 +190,7 @@ music: Sekolah
 
 3 Lapangan Sekolah
 Ayu: Wah udah bunyi bel, ayo kita kembali ke kelas
+anim: dewi seragam normal -> none(-250)
 anim: ayu seragam terkejut -> none(250)
 music: Sekolah
 
