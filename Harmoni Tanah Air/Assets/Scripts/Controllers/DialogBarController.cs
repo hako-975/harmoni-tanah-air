@@ -17,7 +17,6 @@ public class DialogBarController : MonoBehaviour
 
     private int sentenceIndex = -1;
 
-    private State state = State.COMPLETED;
 
     private Animator animator;
 
@@ -33,6 +32,8 @@ public class DialogBarController : MonoBehaviour
     {
         PLAYING, SPEEDED_UP, COMPLETED
     }
+    
+    private State state = State.COMPLETED;
 
     private void Start()
     {
